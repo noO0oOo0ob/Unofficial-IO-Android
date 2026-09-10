@@ -1,6 +1,10 @@
 package io.turboio.unofficial;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.os.Build;
 
@@ -21,6 +25,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -32,13 +37,13 @@ final class BundledRayNeoRuntime {
         void onEvent(Object event);
     }
 
-    private static final String RUNTIME_VERSION = "RayNeo AI 1.0.1 (61) / CoreConnect 2.0.76-SNAPSHOT";
+    private static final String RUNTIME_VERSION = "RayNeo AI 1.0.2 (68) / CoreConnect 2.0.76-SNAPSHOT";
     private static final Map<String, String> DEX_HASHES = new LinkedHashMap<>();
 
     static {
-        DEX_HASHES.put("classes.dex", "e34f28b0126c4dc857fd3c1ca4aeb596770b1944c92bd951fc11fb3da02657aa");
-        DEX_HASHES.put("classes2.dex", "0c249ece35f08d5005bcc572aa21e6aa51f431a41b714db405da960c348e1bc4");
-        DEX_HASHES.put("classes3.dex", "bdaa327497c4bc3b484528d76f017d041f97de431daf6013e64690f3499dc37d");
+        DEX_HASHES.put("classes.dex", "7777aafca2eb6ad95dc0e4c2858d406d50183142d8c9201739f5d72525e36117");
+        DEX_HASHES.put("classes2.dex", "04a7d400568ea8d66df06133562d329790318f968a378eea524f1459e3e4b35c");
+        DEX_HASHES.put("classes3.dex", "99bcb84be054579256a9e4c0ec2e3c86b5dcf26887a72580c1dbbbaa8db8e85c");
     }
 
     private final Activity activity;
@@ -110,8 +115,35 @@ final class BundledRayNeoRuntime {
         return output;
     }
 
+    List<String> systemBondedDevices() {
+        return formatBluetoothDevices(bluetoothAdapter().getBondedDevices());
+    }
+
+    List<String> systemGattDevices() {
+        BluetoothManager manager = activity.getSystemService(BluetoothManager.class);
+        if (manager == null) throw new IllegalStateException("系统 BluetoothManager 不可用");
+        return formatBluetoothDevices(manager.getConnectedDevices(BluetoothProfile.GATT));
+    }
+
+    String preferredSystemDeviceId() {
+        Set<BluetoothDevice> devices = bluetoothAdapter().getBondedDevices();
+        for (BluetoothDevice device : devices) {
+            String name = device.getName();
+            if (name != null && name.toLowerCase(java.util.Locale.ROOT).contains("rayneo")) {
+                return device.getAddress();
+            }
+        }
+        return "";
+    }
+
     synchronized boolean startDiscovery() throws Exception {
         ensureInitialized();
+        String preferred = preferredSystemDeviceId();
+        startDiscovery(preferred.isEmpty() ? new String[0] : new String[]{preferred});
+        return true;
+    }
+
+    private void startDiscovery(String[] retrieveIds) throws Exception {
         Class<?> type = load("S3.F");
         // An empty list makes Android perform an unfiltered BLE scan. CoreConnect emits
         // RayNeo advertisements as well as unrelated BLE devices, so the UI warns before
@@ -122,8 +154,7 @@ final class BundledRayNeoRuntime {
         Class<?> managerClass = load("com.rayneo.rayneo_venus_sdk_plugin.h$b");
         Object manager = staticField(managerClass, "a");
         invoke(manager, "b", new Class<?>[]{filters.getClass(), String[].class},
-                filters, new String[0]);
-        return true;
+                filters, retrieveIds);
     }
 
     synchronized boolean stopDiscovery() throws Exception {
@@ -135,10 +166,14 @@ final class BundledRayNeoRuntime {
 
     synchronized boolean connectBle(String deviceId, boolean pair) throws Exception {
         ensureInitialized();
+        ensureDeviceKnown(deviceId);
         Object value = invokeStatic(load("com.rayneo.rayneo_venus_sdk_plugin.h"),
                 "b", new Class<?>[]{String.class, String.class, boolean.class},
                 deviceId, "ble", pair);
-        return Boolean.TRUE.equals(value);
+        if (!Boolean.TRUE.equals(value)) {
+            throw new IllegalStateException("CoreConnect 拒绝连接；请确认眼镜已开机且官方 App 未占用连接");
+        }
+        return true;
     }
 
     synchronized boolean disconnectBle(String deviceId) throws Exception {
@@ -153,6 +188,9 @@ final class BundledRayNeoRuntime {
         if (deviceId == null || deviceId.trim().isEmpty()) {
             throw new IllegalArgumentException("deviceId 不能为空");
         }
+        if (!isCoreConnected(deviceId)) {
+            throw new IllegalStateException("本进程 CoreConnect 尚未连接此设备，请先点击 BLE 连接并等待连接事件");
+        }
         Class<?> businessClass = load("S3.h");
         Object business = invokeStatic(load("S3.h$a"), "a",
                 new Class<?>[]{byte.class}, (byte) businessId);
@@ -165,6 +203,48 @@ final class BundledRayNeoRuntime {
         Object message = ctor.newInstance(payload, deviceId, business,
                 UUID.randomUUID().toString(), "com.rayneo.rayneonet");
         invoke(core, "t", new Class<?>[]{messageClass}, message);
+    }
+
+    private void ensureDeviceKnown(String deviceId) throws Exception {
+        if (lookupDevice(deviceId) != null) return;
+        startDiscovery(new String[]{deviceId});
+        try {
+            for (int attempt = 0; attempt < 50; attempt++) {
+                Thread.sleep(100);
+                if (lookupDevice(deviceId) != null) return;
+            }
+        } catch (InterruptedException error) {
+            Thread.currentThread().interrupt();
+            throw error;
+        }
+        try {
+            stopDiscovery();
+        } catch (Exception ignored) {
+            // Preserve the more useful discovery failure below.
+        }
+        throw new IllegalStateException("定向发现未找到设备 " + deviceId
+                + "；请确认眼镜已开机，或暂时退出官方 App 后重试");
+    }
+
+    private Object lookupDevice(String deviceId) throws Exception {
+        return invoke(plugin, "y", new Class<?>[]{String.class}, deviceId);
+    }
+
+    private boolean isCoreConnected(String deviceId) throws Exception {
+        Object result = invokeStatic(load("I3.v"), "h", new Class<?>[0]);
+        if (!(result instanceof Map<?, ?>)) return false;
+        for (Map.Entry<?, ?> entry : ((Map<?, ?>) result).entrySet()) {
+            if (deviceId.equals(String.valueOf(entry.getKey()))) return true;
+            Object value = entry.getValue();
+            if (value != null) {
+                try {
+                    if (deviceId.equals(String.valueOf(field(value, "a")))) return true;
+                } catch (Exception ignored) {
+                    // Map values vary by CoreConnect transport; the key is normally the device ID.
+                }
+            }
+        }
+        return false;
     }
 
     synchronized void drainEvents() {
@@ -181,7 +261,7 @@ final class BundledRayNeoRuntime {
     }
 
     private ClassLoader createVerifiedClassLoader() throws Exception {
-        File runtimeDir = new File(activity.getCodeCacheDir(), "rayneo-1.0.1-61");
+        File runtimeDir = new File(activity.getCodeCacheDir(), "rayneo-1.0.2-68");
         if (!runtimeDir.exists() && !runtimeDir.mkdirs()) {
             throw new IllegalStateException("无法创建运行时目录: " + runtimeDir);
         }
@@ -245,6 +325,24 @@ final class BundledRayNeoRuntime {
     private static boolean supportsArm64() {
         for (String abi : Build.SUPPORTED_ABIS) if ("arm64-v8a".equals(abi)) return true;
         return false;
+    }
+
+    private BluetoothAdapter bluetoothAdapter() {
+        BluetoothManager manager = activity.getSystemService(BluetoothManager.class);
+        BluetoothAdapter adapter = manager == null ? null : manager.getAdapter();
+        if (adapter == null) throw new IllegalStateException("系统蓝牙不可用");
+        if (!adapter.isEnabled()) throw new IllegalStateException("请先开启系统蓝牙");
+        return adapter;
+    }
+
+    private static List<String> formatBluetoothDevices(Iterable<BluetoothDevice> devices) {
+        List<String> output = new ArrayList<>();
+        for (BluetoothDevice device : devices) {
+            String name = device.getName();
+            output.add((name == null || name.isEmpty() ? "未命名设备" : name)
+                    + " | " + device.getAddress());
+        }
+        return output;
     }
 
     private static List<String> stringifyIterable(Object result) {

@@ -44,7 +44,8 @@ public final class MainActivity extends Activity {
         setContentView(buildUi());
         requestBluetoothPermissions();
         log("内置运行时: " + runtime.describe());
-        log("先点击“初始化”，再扫描或连接。无需安装官方 App。\n");
+        log("先初始化运行时，再用系统已配对的 RayNeo 地址建立本进程连接。\n");
+        log("官方 App 的绑定和连接状态不会跨应用进程共享。\n");
         log("兼容扫描会显示附近所有 BLE 设备，请勿连接无法确认归属的设备。\n");
         main.post(eventPoll);
     }
@@ -67,51 +68,47 @@ public final class MainActivity extends Activity {
 
         column.addView(fullButton("初始化内置运行时", () -> run("初始化", () -> {
             runtime.initialize();
-            return "成功";
+            String preferred = runtime.preferredSystemDeviceId();
+            if (!preferred.isEmpty()) main.post(() -> deviceId.setText(preferred));
+            return preferred.isEmpty()
+                    ? "运行时已就绪；未找到系统配对的 RayNeo，请扫描后连接"
+                    : "运行时已就绪；已填入系统配对的 RayNeo，请继续点击 BLE 连接";
         })));
 
         LinearLayout queries = row();
-        queries.addView(button("已绑定", () -> runList("已绑定", runtime::bondedDevices)));
-        queries.addView(button("已连接", () -> runList("已连接", runtime::connectedDevices)));
+        queries.addView(button("系统已配对", this::loadSystemBondedDevices));
+        queries.addView(button("Core 已连接", () -> runList("Core 已连接", runtime::connectedDevices)));
         column.addView(queries);
+
+        column.addView(fullButton("系统 GATT 已连接", () ->
+                runList("系统 GATT 已连接", runtime::systemGattDevices)));
 
         LinearLayout scan = row();
         scan.addView(button("开始扫描", () -> run("开始扫描", runtime::startDiscovery)));
         scan.addView(button("停止扫描", () -> run("停止扫描", runtime::stopDiscovery)));
         column.addView(scan);
 
-        deviceId = input("设备 ID（从扫描事件复制）", false);
+        deviceId = input("设备 ID / 蓝牙地址（初始化时自动识别）", false);
         column.addView(deviceId);
         pair = new CheckBox(this);
         pair.setText("连接时请求配对");
         column.addView(pair);
 
         LinearLayout connection = row();
-        connection.addView(button("BLE 连接", () -> run("BLE 连接", () ->
-                runtime.connectBle(value(deviceId, "设备 ID"), pair.isChecked()))));
-        connection.addView(button("BLE 断开", () -> run("BLE 断开", () ->
-                runtime.disconnectBle(value(deviceId, "设备 ID")))));
+        connection.addView(button("BLE 连接", this::connectBle));
+        connection.addView(button("BLE 断开", this::disconnectBle));
         column.addView(connection);
 
         asrText = input("发送到眼镜的 ASR 文本", false);
         column.addView(asrText);
-        column.addView(fullButton("发送 AssistantMsg / ASR（business 13）", () -> run("发送 ASR", () -> {
-            byte[] payload = AssistantWire.asrText(value(asrText, "ASR 文本"));
-            runtime.send(AssistantWire.BUSINESS_VOICE_ASSISTANT, value(deviceId, "设备 ID"), payload);
-            return payload.length + " bytes";
-        })));
+        column.addView(fullButton("发送 AssistantMsg / ASR（business 13）", this::sendAsr));
 
         businessId = input("原始消息 business id（例如 13）", true);
         businessId.setText(R.string.business_default);
         rawHex = input("原始 payload，十六进制（例如 08011005）", false);
         column.addView(businessId);
         column.addView(rawHex);
-        column.addView(fullButton("发送原始消息", () -> run("发送原始消息", () -> {
-            int business = Integer.parseInt(value(businessId, "business id"));
-            byte[] payload = parseHex(value(rawHex, "payload"));
-            runtime.send(business, value(deviceId, "设备 ID"), payload);
-            return payload.length + " bytes";
-        })));
+        column.addView(fullButton("发送原始消息", this::sendRaw));
 
         logView = text("", 12);
         logView.setTextIsSelectable(true);
@@ -153,6 +150,67 @@ public final class MainActivity extends Activity {
             List<String> values = action.get();
             return values.isEmpty() ? "[]" : "\n  " + String.join("\n  ", values);
         });
+    }
+
+    private void loadSystemBondedDevices() {
+        run("系统已配对", () -> {
+            List<String> values = runtime.systemBondedDevices();
+            String preferred = runtime.preferredSystemDeviceId();
+            if (!preferred.isEmpty()) main.post(() -> deviceId.setText(preferred));
+            String listing = values.isEmpty() ? "[]" : "\n  " + String.join("\n  ", values);
+            return preferred.isEmpty() ? listing : listing + "\n已自动选择 RayNeo: " + preferred;
+        });
+    }
+
+    private void connectBle() {
+        try {
+            String id = value(deviceId, "设备 ID");
+            boolean shouldPair = pair.isChecked();
+            run("BLE 连接", () -> runtime.connectBle(id, shouldPair));
+        } catch (RuntimeException error) {
+            logFailure("BLE 连接", error);
+        }
+    }
+
+    private void disconnectBle() {
+        try {
+            String id = value(deviceId, "设备 ID");
+            run("BLE 断开", () -> runtime.disconnectBle(id));
+        } catch (RuntimeException error) {
+            logFailure("BLE 断开", error);
+        }
+    }
+
+    private void sendAsr() {
+        try {
+            String id = value(deviceId, "设备 ID");
+            String text = value(asrText, "ASR 文本");
+            run("发送 ASR", () -> {
+                byte[] payload = AssistantWire.asrText(text);
+                runtime.send(AssistantWire.BUSINESS_VOICE_ASSISTANT, id, payload);
+                return payload.length + " bytes";
+            });
+        } catch (RuntimeException error) {
+            logFailure("发送 ASR", error);
+        }
+    }
+
+    private void sendRaw() {
+        try {
+            String id = value(deviceId, "设备 ID");
+            int business = Integer.parseInt(value(businessId, "business id"));
+            byte[] payload = parseHex(value(rawHex, "payload"));
+            run("发送原始消息", () -> {
+                runtime.send(business, id, payload);
+                return payload.length + " bytes";
+            });
+        } catch (RuntimeException error) {
+            logFailure("发送原始消息", error);
+        }
+    }
+
+    private void logFailure(String name, Throwable error) {
+        log("✗ " + name + ": " + BundledRayNeoRuntime.rootMessage(error));
     }
 
     private Button button(String label, Runnable click) {

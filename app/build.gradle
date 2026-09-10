@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    // Matches META-INF/kotlinx_coroutines_{core,android}.version in RayNeo AI 1.0.1.
+    // Matches META-INF/kotlinx_coroutines_{core,android}.version in RayNeo AI 1.0.2.
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
     testImplementation "junit:junit:4.13.2"
 }

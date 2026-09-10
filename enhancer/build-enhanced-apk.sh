@@ -2,8 +2,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-APK="${1:-/Users/sheng/Downloads/RayNeo_AI_1.0.1.apk}"
-EXPECTED="9149fb0cf41c3007a7aea912657377cc06e719b4c893027087cf5d1097fb2510"
+APK="${1:-/Users/sheng/Downloads/RayNeo_AI_1.0.2.apk}"
+EXPECTED="32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093"
 BUILD="$ROOT/enhancer/build"
 DECODED="$BUILD/decoded"
 CLASSES="$BUILD/classes"
@@ -12,7 +12,7 @@ OUTPUT="$BUILD/output"
 APKTOOL="$ROOT/tools/apktool.jar"
 SDK="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
 ANDROID_JAR="$SDK/platforms/android-36/android.jar"
-TOOLS="$SDK/build-tools/36.1.0"
+TOOLS="$SDK/build-tools/36.0.0"
 KEYSTORE="${ANDROID_DEBUG_KEYSTORE:-$HOME/.android/debug.keystore}"
 
 [[ -f "$APK" ]] || { echo "APK not found: $APK" >&2; exit 1; }
@@ -41,6 +41,6 @@ java -jar "$APKTOOL" b -p "$BUILD/framework" "$DECODED" -o "$BUILD/unsigned.apk"
 "$TOOLS/apksigner" sign \
   --ks "$KEYSTORE" --ks-key-alias androiddebugkey \
   --ks-pass pass:android --key-pass pass:android \
-  --out "$OUTPUT/RayNeo_AI_1.0.1-turbo-debug.apk" "$BUILD/aligned.apk"
-"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.1-turbo-debug.apk"
-shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.1-turbo-debug.apk"
+  --out "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk" "$BUILD/aligned.apk"
+"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"
+shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"

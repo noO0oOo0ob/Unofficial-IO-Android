@@ -49,7 +49,7 @@ public final class EnhancedActivity extends Activity {
         codex = new CodexBridgeClient(this);
         setContentView(buildUi());
         requestBluetoothPermissions();
-        log("这是官方 RayNeo AI 1.0.1 完整 APK 内的新增入口。");
+        log("这是官方 RayNeo AI 1.0.2 完整 APK 内的新增入口。");
         log("设备运行时: " + runtime.describe());
         if (codex.hasUnknownDelivery()) log("⚠ 上次 Codex 提交结果未知，请先刷新电脑端核对，不会自动重发。");
         main.post(eventPoll);
