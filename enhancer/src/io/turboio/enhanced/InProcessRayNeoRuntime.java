@@ -93,6 +93,18 @@ final class InProcessRayNeoRuntime {
         return output;
     }
 
+    synchronized String requireSingleConnectedDeviceId() throws Exception {
+        ensureInitialized();
+        Object value = invokeStatic(load("I3.v"), "h", new Class<?>[0]);
+        if (!(value instanceof Map<?, ?>) || ((Map<?, ?>) value).size() != 1) {
+            int count = value instanceof Map<?, ?> ? ((Map<?, ?>) value).size() : 0;
+            throw new IllegalStateException("设备 ID 为空，且当前已连接设备数量为 " + count + "；请明确填写眼镜设备 ID");
+        }
+        Object key = ((Map<?, ?>) value).keySet().iterator().next();
+        if (key == null || String.valueOf(key).trim().isEmpty()) throw new IllegalStateException("已连接设备 ID 无效");
+        return String.valueOf(key);
+    }
+
     synchronized boolean startDiscovery() throws Exception {
         ensureInitialized();
         Class<?> type = load("S3.F");
@@ -122,6 +134,15 @@ final class InProcessRayNeoRuntime {
 
     synchronized void sendAsr(String deviceId, String text) throws Exception {
         send(AssistantWire.BUSINESS_VOICE_ASSISTANT, deviceId, AssistantWire.asrText(text));
+    }
+
+    synchronized String sendNotification(String deviceId, String title, String content,
+                                           boolean enableMaster) throws Exception {
+        ensureInitialized();
+        if (enableMaster) send(NotificationWire.BUSINESS_NOTIFICATION, deviceId, NotificationWire.enableMaster());
+        NotificationWire.Packet packet = NotificationWire.notification(title, content);
+        send(NotificationWire.BUSINESS_NOTIFICATION, deviceId, packet.bytes);
+        return packet.uid;
     }
 
     synchronized void send(int businessId, String deviceId, byte[] payload) throws Exception {

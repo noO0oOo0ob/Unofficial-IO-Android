@@ -30,6 +30,9 @@ public final class EnhancedActivity extends Activity {
     private CodexBridgeClient codex;
     private EditText deviceId;
     private EditText glassesText;
+    private EditText notificationTitle;
+    private EditText notificationContent;
+    private CheckBox enableNotificationMaster;
     private CheckBox pair;
     private EditText endpoint;
     private EditText token;
@@ -93,6 +96,28 @@ public final class EnhancedActivity extends Activity {
         column.addView(fullButton("发送 AssistantMsg / ASR", () -> run("发送到眼镜", () -> {
             runtime.sendAsr(required(deviceId, "设备 ID"), required(glassesText, "文本")); return "已交给 CoreConnect";
         })));
+
+        column.addView(section("眼镜消息推送"));
+        column.addView(text("发送普通通知卡片（business 21/type 2），不会伪装成 ASR。设备 ID 留空时仅自动使用唯一已连接设备。", 13, Color.DKGRAY));
+        notificationTitle = input("消息标题（最多 80 字）", false, false);
+        notificationTitle.setText("Turbo IO 测试"); column.addView(notificationTitle);
+        notificationContent = input("消息正文（最多 500 字）", true, false);
+        notificationContent.setText("这是一条从手机推送到眼镜的测试消息。"); column.addView(notificationContent);
+        enableNotificationMaster = new CheckBox(this);
+        enableNotificationMaster.setText("发送前开启眼镜通知总开关（不覆盖来源过滤设置）");
+        enableNotificationMaster.setChecked(true); column.addView(enableNotificationMaster);
+        column.addView(fullButton("推送通知到眼镜", () -> {
+            final String enteredDevice = deviceId.getText().toString().trim();
+            final String title = notificationTitle.getText().toString();
+            final String content = notificationContent.getText().toString();
+            final boolean enableMaster = enableNotificationMaster.isChecked();
+            run("推送眼镜通知", () -> {
+                String target = enteredDevice.isEmpty() ? runtime.requireSingleConnectedDeviceId() : enteredDevice;
+                main.post(() -> deviceId.setText(target));
+                String uid = runtime.sendNotification(target, title, content, enableMaster);
+                return "已提交到 CoreConnect，UID=" + uid + "；请观察镜片和后续 EVENT 回执";
+            });
+        }));
 
         column.addView(section("Codex Bridge"));
         column.addView(text("协议与 iOS Turbo-IO 一致。真机本地调试先执行 adb reverse，再用 127.0.0.1。", 13, Color.DKGRAY));

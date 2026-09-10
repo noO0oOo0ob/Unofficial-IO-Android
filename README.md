@@ -23,6 +23,7 @@
 - 接收并打印 SDK 事件
 - 向任意业务通道发送原始二进制消息
 - 按 iOS Turbo-IO 的 `AssistantMsg` 协议发送 ASR 文本（business id `13`、type `5`）
+- 以普通通知卡片向眼镜推送指定标题和正文（business id `21`、type `2`），可选先开启通知总开关
 
 ## 构建独立 PoC
 
