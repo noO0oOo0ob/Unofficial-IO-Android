@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "初始化、连接与 AssistantMsg 收发时序",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "column_fit": "spread",
+    "viewBox": [1080, 1040]
+  },
+  "participants": [
+    { "id": "user", "type": "external", "label": "用户", "sublabel": "操作" },
+    { "id": "activity", "type": "frontend", "label": "Android UI", "sublabel": "界面 / 轮询" },
+    { "id": "wire", "type": "backend", "label": "AssistantWire", "sublabel": "protobuf 编码" },
+    { "id": "runtime", "type": "backend", "label": "Runtime 适配层", "sublabel": "版本锁定" },
+    { "id": "loader", "type": "security", "label": "DEX 装载器", "sublabel": "私有目录加载" },
+    { "id": "core", "type": "backend", "label": "CoreConnect", "sublabel": "SDK 核心" },
+    { "id": "ble", "type": "messagebus", "label": "Android BLE", "sublabel": "系统蓝牙" },
+    { "id": "glasses", "type": "external", "label": "RayNeo 眼镜", "sublabel": "VENUS 系列" }
+  ],
+  "segments": [
+    { "from": 150, "to": 390, "label": "一次性初始化" },
+    { "from": 410, "to": 680, "label": "扫描与连接" },
+    { "from": 700, "to": 945, "label": "AssistantMsg 发送与事件返回" }
+  ],
+  "messages": [
+    { "id": "tap_init", "from": "user", "to": "activity", "y": 185, "label": "点击初始化", "variant": "default" },
+    { "id": "init_runtime", "from": "activity", "to": "runtime", "y": 225, "label": "initialize()", "variant": "emphasis" },
+    { "id": "copy_dex", "from": "runtime", "to": "loader", "y": 265, "label": "复制 3 份内置 DEX 到 code_cache", "variant": "security" },
+    { "id": "verify_dex", "from": "loader", "to": "runtime", "y": 305, "label": "SHA-256 通过，DEX 已只读", "variant": "security" },
+    { "id": "load_vendor", "from": "runtime", "to": "loader", "y": 345, "label": "创建 DexClassLoader", "variant": "security" },
+    { "id": "bootstrap_core", "from": "runtime", "to": "core", "y": 385, "label": "初始化 manager / core，注册 5 类 delegate", "variant": "emphasis" },
+    { "id": "init_done", "from": "core", "to": "activity", "y": 425, "label": "初始化完成", "variant": "return" },
+
+    { "id": "tap_scan", "from": "user", "to": "activity", "y": 465, "label": "开始扫描", "variant": "default" },
+    { "id": "scan_call", "from": "activity", "to": "runtime", "y": 505, "label": "startDiscovery(VENUS, VENUSINTL)", "variant": "emphasis" },
+    { "id": "scan_ble", "from": "core", "to": "ble", "y": 545, "label": "启动 BLE 扫描", "variant": "default" },
+    { "id": "advertise", "from": "glasses", "to": "ble", "y": 585, "label": "广播设备信息", "variant": "return" },
+    { "id": "discovery_event", "from": "core", "to": "activity", "y": 605, "label": "delegate -> Map -> 事件队列 -> UI", "variant": "dashed" },
+    { "id": "connect", "from": "activity", "to": "core", "y": 645, "label": "connect(deviceId, ble, pair)", "variant": "emphasis" },
+    { "id": "ble_session", "from": "ble", "to": "glasses", "y": 675, "label": "建立连接与 CoreConnect 握手", "variant": "emphasis" },
+
+    { "id": "send_text", "from": "user", "to": "activity", "y": 720, "label": "输入文本并发送", "variant": "default" },
+    { "id": "encode", "from": "activity", "to": "wire", "y": 755, "label": "编码 version=1, type=5", "variant": "default", "note": "message 字段为 final=true 的 JSON" },
+    { "id": "send_business", "from": "activity", "to": "runtime", "y": 790, "label": "send(business=13, deviceId, protobuf bytes)", "variant": "emphasis" },
+    { "id": "transport_msg", "from": "runtime", "to": "core", "y": 825, "label": "构造 C1957P + UUID messageId", "variant": "emphasis" },
+    { "id": "write_ble", "from": "core", "to": "glasses", "y": 860, "label": "经 BLE 发送业务帧", "variant": "emphasis" },
+    { "id": "ack_or_reply", "from": "glasses", "to": "core", "y": 895, "label": "ACK 或业务回复", "variant": "return" },
+    { "id": "message_event", "from": "core", "to": "activity", "y": 930, "label": "message delegate -> 事件队列 -> UI", "variant": "dashed" }
+  ],
+  "activations": [
+    { "participant": "activity", "from": 180, "to": 430, "type": "frontend" },
+    { "participant": "runtime", "from": 220, "to": 420, "type": "backend" },
+    { "participant": "loader", "from": 255, "to": 365, "type": "security" },
+    { "participant": "core", "from": 375, "to": 430, "type": "backend" },
+    { "participant": "core", "from": 500, "to": 715, "type": "backend" },
+    { "participant": "ble", "from": 535, "to": 715, "type": "messagebus" },
+    { "participant": "activity", "from": 715, "to": 940, "type": "frontend" },
+    { "participant": "wire", "from": 750, "to": 780, "type": "backend" },
+    { "participant": "runtime", "from": 785, "to": 840, "type": "backend" },
+    { "participant": "core", "from": 820, "to": 940, "type": "backend" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "发送语义",
+      "items": [
+        "业务通道 13 表示 voice assistant",
+        "AssistantMsg type 5 表示 ASR 文本",
+        "CoreConnect 再封装 deviceId、business enum 和 messageId"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "接收语义",
+      "items": [
+        "沿用原插件 delegate 将原始事件转换为 Map",
+        "事件先进入 SDK 队列，MainActivity 每 350 ms 排空",
+        "初版直接展示事件，尚未抽象完整业务模型"
+      ]
+    }
+  ]
+}

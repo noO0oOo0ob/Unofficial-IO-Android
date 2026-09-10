@@ -1,0 +1,11 @@
+.gradle/
+.idea/
+build/
+app/build/
+app/src/main/assets/vendor/
+app/src/main/jniLibs/
+enhancer/build/
+tools/apktool.jar
+*.apk
+local.properties
+*.iml

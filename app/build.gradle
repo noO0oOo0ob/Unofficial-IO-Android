@@ -1,0 +1,41 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "io.turboio.unofficial"
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "io.turboio.unofficial"
+        minSdk 29
+        targetSdk 36
+        versionCode 1
+        versionName "0.1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+}
+
+dependencies {
+    // Matches META-INF/kotlinx_coroutines_{core,android}.version in RayNeo AI 1.0.1.
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+    testImplementation "junit:junit:4.13.2"
+}
