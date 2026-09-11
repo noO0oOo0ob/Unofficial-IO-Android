@@ -12,16 +12,16 @@
 
 当前运行时严格锁定到以下样本：
 
-- RayNeo AI APK：`1.0.1 (61)`
+- RayNeo AI APK：`1.0.2 (68)`
 - 包名：`com.rayneo.venus.pub`
 - CoreConnect：`2.0.76-SNAPSHOT`
-- 样本 SHA-256：`9149fb0cf41c3007a7aea912657377cc06e719b4c893027087cf5d1097fb2510`
+- 样本 SHA-256：`32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093`
 
 ## 初版能力
 
 - 初始化内置 RayNeo 连接运行时
 - 兼容扫描附近 BLE 设备，由用户确认 RayNeo 眼镜广播
-- 查询已绑定和已连接设备
+- 查询 Android 系统已配对设备、系统 GATT 连接和本进程 CoreConnect 连接
 - 通过 BLE 连接、断开设备
 - 接收并打印 SDK 事件
 - 向任意业务通道发送原始二进制消息
@@ -35,10 +35,10 @@
 - JDK 17 或更高版本，命令行中可使用 `java`、`javac` 和 `jar`
 - Node.js 18 或更高版本
 - Android SDK Platform 36
-- Android SDK Build-Tools 36.1.0（需要 `d8`、`zipalign` 和 `apksigner`）
+- Android SDK Build-Tools 36.0.0（需要 `d8`、`zipalign` 和 `apksigner`）
 - Android Platform Tools（需要 `adb`）
 - Apktool 3.0.3
-- 本人合法取得的 RayNeo AI `1.0.1 (61)` 原始 APK
+- 本人合法取得的 RayNeo AI `1.0.2 (68)` 原始 APK
 - Android 10（API 29）或更高版本的测试手机
 
 先检查基础命令：
@@ -62,9 +62,9 @@ Linux 或自定义安装目录请把默认路径替换为实际 SDK 路径。
 
 ```bash
 test -f "$ANDROID_HOME/platforms/android-36/android.jar"
-test -x "$ANDROID_HOME/build-tools/36.1.0/d8"
-test -x "$ANDROID_HOME/build-tools/36.1.0/zipalign"
-test -x "$ANDROID_HOME/build-tools/36.1.0/apksigner"
+test -x "$ANDROID_HOME/build-tools/36.0.0/d8"
+test -x "$ANDROID_HOME/build-tools/36.0.0/zipalign"
+test -x "$ANDROID_HOME/build-tools/36.0.0/apksigner"
 ```
 
 首次构建下载 Apktool 3.0.3：
@@ -104,10 +104,10 @@ keytool -genkeypair -v \
 
 ### 1. 准备底座 APK
 
-把本人合法取得的 `RayNeo_AI_1.0.1.apk` 放在本机目录中。仓库不会提供、下载或分发该文件。脚本只接受 SHA-256 为 `9149fb0cf41c3007a7aea912657377cc06e719b4c893027087cf5d1097fb2510` 的固定样本，可先自行核对：
+把本人合法取得的 `RayNeo_AI_1.0.2.apk` 放在本机目录中。仓库不会提供、下载或分发该文件。脚本只接受 SHA-256 为 `32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093` 的固定样本，可先自行核对：
 
 ```bash
-shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.1.apk
+shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.2.apk
 ```
 
 ### 2. 构建、对齐和签名
@@ -115,7 +115,7 @@ shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.1.apk
 在仓库根目录执行：
 
 ```bash
-./enhancer/build-enhanced-apk.sh /Users/sheng/Downloads/RayNeo_AI_1.0.1.apk
+./enhancer/build-enhanced-apk.sh /Users/sheng/Downloads/RayNeo_AI_1.0.2.apk
 ```
 
 脚本依次完成：
@@ -131,7 +131,7 @@ shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.1.apk
 构建产物位于：
 
 ```text
-enhancer/build/output/RayNeo_AI_1.0.1-turbo-debug.apk
+enhancer/build/output/RayNeo_AI_1.0.2-turbo-debug.apk
 ```
 
 每次构建都会清理 `enhancer/build/`。不要把 APK、签名密钥或从官方 APK 提取出的内容提交到仓库。
@@ -150,7 +150,7 @@ adb devices
 
 ```bash
 adb install --no-incremental -r \
-  enhancer/build/output/RayNeo_AI_1.0.1-turbo-debug.apk
+  enhancer/build/output/RayNeo_AI_1.0.2-turbo-debug.apk
 ```
 
 如果手机上是官方签名版本，必须先自行备份必要数据，再卸载官方 App。下面的卸载命令会清除该 App 的本地数据：
@@ -158,7 +158,7 @@ adb install --no-incremental -r \
 ```bash
 adb uninstall com.rayneo.venus.pub
 adb install --no-incremental \
-  enhancer/build/output/RayNeo_AI_1.0.1-turbo-debug.apk
+  enhancer/build/output/RayNeo_AI_1.0.2-turbo-debug.apk
 ```
 
 安装完成后，桌面会同时出现官方 `RayNeo AI` 入口和新增的 `Turbo IO` 入口。
@@ -209,6 +209,8 @@ adb reverse --remove tcp:8787
 
 这是一份兼容性 PoC，不是官方 SDK。设备发现、连接和消息 ABI 来自对指定 APK 的互操作分析，因此官方 App 升级后可能失效。增强包必须重新签名，不能覆盖官方签名版本；依赖官方证书指纹的登录、支付、推送或服务端校验也可能拒绝重签包。
 
+独立 PoC 可以与官方 App 并存，并能读取 Android 系统配对和 GATT 状态，但不能继承官方 App 私有目录中的 CoreConnect 设备对象、能力表或绑定身份。系统显示眼镜已连接不等于独立进程已完成 CoreConnect 握手；发送前必须以本进程连接列表为准。不同签名的应用还会获得不同作用域的 Android ID，因此不能把官方绑定会话当作可跨应用复用的系统连接。
+
 小米 10 的蓝牙控制器报告硬件扫描过滤槽为 0，因此初版使用无硬件过滤扫描。页面会列出附近其他 BLE 设备；不要连接无法确认属于自己的设备。
 
 代码可构建和进行协议单测，不等于已经在真实眼镜上验证。运行前请确保你有权分析和使用相关二进制；第三方二进制不会被声明为本项目原创或重新许可。详见 [VENDOR_NOTICES.md](VENDOR_NOTICES.md)。
@@ -216,3 +218,5 @@ adb reverse --remove tcp:8787
 ## 许可与声明
 
 本仓库原创内容采用 [MIT License](LICENSE)。项目的非商业研究定位、支持范围、风险和责任限制见 [DISCLAIMER.md](DISCLAIMER.md)；第三方材料的权属与许可边界见 [VENDOR_NOTICES.md](VENDOR_NOTICES.md)。
+
+本次 `1.0.2` 适配中遇到的状态误判、设备发现、签名身份和部署路线问题，连同证据与取舍，记录在 [docs/INVESTIGATION_1.0.2.md](docs/INVESTIGATION_1.0.2.md)。

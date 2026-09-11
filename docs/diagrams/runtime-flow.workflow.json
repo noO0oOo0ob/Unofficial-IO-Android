@@ -33,7 +33,7 @@
     { "id": "apk", "lane": "app", "col": 0, "type": "frontend", "label": "单一 APK", "sublabel": "主程序 + vendor DEX + arm64 SO", "width": 156 },
     { "id": "permission", "lane": "app", "col": 1, "type": "security", "label": "请求蓝牙权限", "sublabel": "标准 Android Runtime Permission", "width": 156 },
     { "id": "extract", "lane": "runtime", "col": 2, "type": "backend", "label": "释放内置 DEX", "sublabel": "仅写入本应用 code_cache", "width": 156 },
-    { "id": "verify", "lane": "security", "col": 2, "type": "security", "label": "校验并只读化", "sublabel": "SHA-256 + read-only", "tag": "版本锁定 1.0.1 (61)", "width": 156 },
+    { "id": "verify", "lane": "security", "col": 2, "type": "security", "label": "校验并只读化", "sublabel": "SHA-256 + read-only", "tag": "版本锁定 1.0.2 (68)", "width": 156 },
     { "id": "classloader", "lane": "runtime", "col": 3, "type": "backend", "label": "DexClassLoader", "sublabel": "加载 APK 自带代码与 native 库", "width": 156 },
     { "id": "core", "lane": "runtime", "col": 4, "type": "backend", "label": "初始化 CoreConnect", "sublabel": "注册 5 类事件 delegate", "width": 168 },
     { "id": "command", "lane": "device", "col": 5, "type": "messagebus", "label": "设备操作", "sublabel": "扫描、连接、断开、发送", "width": 156 },
@@ -66,7 +66,7 @@
       "dot": "amber",
       "title": "兼容性边界",
       "items": [
-        "反射 ABI 与 RayNeo AI 1.0.1 (61) 强绑定",
+        "反射 ABI 与 RayNeo AI 1.0.2 (68) 强绑定",
         "当前仅打包 arm64-v8a",
         "真机握手仍需连接手机与眼镜验证"
       ]
