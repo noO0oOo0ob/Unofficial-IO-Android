@@ -1,0 +1,24 @@
+{
+  "originalSha256": "32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093",
+  "enhancedSha256": "47bfb98f4a529c8f8c8a6db90ad70783c76341b8203e30b72ba7e86026996f9f",
+  "changedOriginalEntries": [
+    "AndroidManifest.xml",
+    "classes2.dex"
+  ],
+  "addedEntries": [
+    "classes4.dex"
+  ],
+  "identicalVendorFiles": 3426,
+  "identicalResourcesAssetsNativeFiles": 3116,
+  "manifestOnlyAddsDemoActivity": true,
+  "hardwareVerified": false,
+  "hostAssertionsPassed": 187,
+  "patchManifestTestsPassed": true,
+  "minimaxProductionJavaClient": {
+    "success": true,
+    "syntheticAudio": true,
+    "elapsedMs": 1183,
+    "responseCharacters": 24
+  },
+  "adbConnectedDevices": 0
+}

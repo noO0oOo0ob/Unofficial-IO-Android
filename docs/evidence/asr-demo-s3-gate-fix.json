@@ -1,0 +1,25 @@
+{
+  "originalSha256": "32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093",
+  "enhancedSha256": "ecf6c61c3fc7ef2c810868071f6b41b4d0947b5ec77410747c9341c647f0ea0b",
+  "changedOriginalEntries": [
+    "AndroidManifest.xml",
+    "classes2.dex"
+  ],
+  "addedEntries": [
+    "classes4.dex"
+  ],
+  "identicalVendorFiles": 3426,
+  "identicalResourcesAssetsNativeFiles": 3116,
+  "manifestOnlyAddsDemoActivity": true,
+  "hardwareVerified": false,
+  "hostControllerAssertionsPassed": 187,
+  "realAdapterRegressionChecksPassed": 13,
+  "runtimeSnapshot": {
+    "model": "RayNeoS3",
+    "running": false,
+    "mock": false,
+    "localRecorder": true
+  },
+  "fix": "Do not treat N7.b.h / official local-recorder policy as an Opus transport capability",
+  "fixedBuildInstalled": false
+}

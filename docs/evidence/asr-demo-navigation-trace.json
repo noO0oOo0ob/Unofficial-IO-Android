@@ -1,0 +1,27 @@
+{
+  "originalSha256": "32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093",
+  "enhancedSha256": "4ca7877d36db91f43f0814eb408d3d20ecd05460117523f59851370fbcc44aaf",
+  "changedOriginalEntries": [
+    "AndroidManifest.xml",
+    "classes2.dex"
+  ],
+  "addedEntries": [
+    "classes4.dex"
+  ],
+  "identicalVendorFiles": 3426,
+  "identicalResourcesAssetsNativeFiles": 3116,
+  "manifestOnlyAddsDemoActivity": true,
+  "hardwareVerified": false,
+  "change": "Independent control task and bounded metadata journal; busy guard retained",
+  "controllerAssertions": 200,
+  "adapterChecks": 26,
+  "journalChecksPassed": true,
+  "installedThisTurn": false,
+  "phoneEvidence": {
+    "time": "2026-09-11 18:51:18 +08:00",
+    "alwaysOnActive": true,
+    "userConfirmedStatus": "本次未开始收音：全天智记运行中",
+    "asrTranscriptEmpty": true
+  },
+  "scope": "Wake reached demo and was blocked before START. Firmware connection prompt cause not established."
+}

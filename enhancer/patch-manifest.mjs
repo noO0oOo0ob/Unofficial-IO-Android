@@ -6,17 +6,13 @@ let xml = fs.readFileSync(file, 'utf8');
 if (!xml.includes('android:name="com.rayneo.venus.VenusApplication"')) {
   throw new Error('unexpected RayNeo manifest');
 }
-if (!xml.includes('android:networkSecurityConfig=')) {
-  xml = xml.replace(
-    /<application(?=\s)/,
-    '<application android:networkSecurityConfig="@xml/turbo_network_security_config"'
-  );
-}
 if (!xml.includes('io.turboio.enhanced.EnhancedActivity')) {
   const activity = `
         <activity
             android:name="io.turboio.enhanced.EnhancedActivity"
             android:label="Turbo IO"
+            android:taskAffinity="com.rayneo.venus.pub.turbo"
+            android:launchMode="singleTask"
             android:icon="@drawable/ic_launcher"
             android:theme="@android:style/Theme.Material.Light.NoActionBar"
             android:exported="true"

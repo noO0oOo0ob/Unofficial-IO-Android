@@ -3,6 +3,10 @@
 > [!WARNING]
 > 本项目是非官方、非商业的个人研究项目，仅用于作者自身学习、研究和互操作性验证。作者不支持本人自用之外的复制、分发、部署或其他使用，也不对相关行为及后果承担责任。构建或使用前请完整阅读 [免责声明](DISCLAIMER.md)、[第三方二进制说明](VENDOR_NOTICES.md) 和 [MIT License](LICENSE)。MIT 只覆盖贡献者有权许可的原创内容，不覆盖官方 APK 或其中的第三方材料。
 
+当前主线已实现 [Paseo × RayNeo 眼镜桥接](docs/PASEO_RAYNEO_SOP.md)：普通语音唤醒 → MiniMax ASR → 带上下文的 MiniMax 意图路由 → MiniMax Responses 联网流式回答或 Paseo/Codex。Paseo daemon 保持不变，原版 Paseo App 继续承担完整历史和权限审批。完整实现取舍和问题复盘见 [Paseo × RayNeo 桥接实现与踩坑复盘](docs/PASEO_RAYNEO_IMPLEMENTATION_RETROSPECTIVE.md)。
+
+较早的底座增强、语音入口和 UI 候选调研保留在 [Android 官方底座增强方案 V2](docs/ENHANCEMENT_V2_PLAN.md)、[V3 调查](docs/HOOK_POINT_REVIEW_V3.md) 与 [眼镜 UI 交互选项](docs/GLASSES_UI_INTERACTION_OPTIONS.md)。这些文档是设计证据；当前可操作步骤以 [Paseo × RayNeo 使用 SOP](docs/PASEO_RAYNEO_SOP.md) 为准。
+
 这个仓库现在包含两条验证路径：
 
 1. `app/`：早期独立 PoC，仅用于验证从样本中提取的 CoreConnect 能否在普通 Android App 内运行。
@@ -17,16 +21,17 @@
 - CoreConnect：`2.0.76-SNAPSHOT`
 - 样本 SHA-256：`32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093`
 
-## 初版能力
+## 当前实现范围
 
-- 初始化内置 RayNeo 连接运行时
-- 兼容扫描附近 BLE 设备，由用户确认 RayNeo 眼镜广播
-- 查询 Android 系统已配对设备、系统 GATT 连接和本进程 CoreConnect 连接
-- 通过 BLE 连接、断开设备
-- 接收并打印 SDK 事件
-- 向任意业务通道发送原始二进制消息
-- 按 iOS Turbo-IO 的 `AssistantMsg` 协议发送 ASR 文本（business id `13`、type `5`）
-- 以普通通知卡片向眼镜推送指定标题和正文（business id `21`、type `2`），可选先开启通知总开关
+- Paseo 眼镜模式默认关闭，进程重启后恢复关闭。
+- 普通唤醒后保持 Opus 音频上行，独立解码与本地断句；ASR 最终文本通过 type 5 回显。MiniMax 回答期间仍监听音频，本地 VAD 检测到新讲话后立即取消当前回答并收取下一句。首轮 5 秒无语音检测不会误伤连续会话；连续模式只在 120 秒完全无活动后保护性退出。
+- 未确定目标时由 MiniMax M3 Responses 结合最近交互、当前会话和当前工作区分类；意图请求关闭 reasoning，避免推理占满输出预算后没有 JSON 正文。选中或新建 Codex 会话后的下一句跳过意图 HTTP，ASR 完成后直接发往该 Codex 会话。普通问答进入 MiniMax Responses，并按需使用服务端 `web_search`。
+- 支持列会话、分页、按编号/标题选择、查看详情、最后回复、回答分段、退出助手和二次确认停止。
+- 直接使用 Paseo daemon v1 WebSocket RPC，支持可选密码；不改 daemon，也不依赖 Paseo 手机 App 中转。
+- 普通模型回答在助手页使用 type 32/type 12；超过一屏后流式刷新始终展示最新文本窗口，完成时停留在最后一段，可说“上一段”回看。Codex 异步执行结果始终使用普通通知，不追加到助手回答流。完整内容仍可在 Paseo App 查看。
+- MiniMax API Key 固定用于 ASR、意图识别和 Responses 回答；中国区接口统一使用 `api.minimax.cn`，当前版本隐藏其他模型配置。Key 使用 Android KeyStore 加密并保存在不参与备份的本机目录。
+- 关闭模式取消本轮工作，等待已发出的停止/退出指令结果；OFF 直接执行官方语音方法。
+- 支持读取 Paseo 工作区并在眼镜端新建 Codex 会话；不实现 TTS、实时流式 ASR、Paseo Relay/SSH，不重建官方眼镜连接、不改通知总开关。
 
 ## 环境准备
 
@@ -107,7 +112,7 @@ keytool -genkeypair -v \
 把本人合法取得的 `RayNeo_AI_1.0.2.apk` 放在本机目录中。仓库不会提供、下载或分发该文件。脚本只接受 SHA-256 为 `32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093` 的固定样本，可先自行核对：
 
 ```bash
-shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.2.apk
+shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.2.apk
 ```
 
 ### 2. 构建、对齐和签名
@@ -115,18 +120,15 @@ shasum -a 256 /Users/sheng/Downloads/RayNeo_AI_1.0.2.apk
 在仓库根目录执行：
 
 ```bash
-./enhancer/build-enhanced-apk.sh /Users/sheng/Downloads/RayNeo_AI_1.0.2.apk
+./enhancer/build-enhanced-apk.sh /Users/USER/Downloads/RayNeo_AI_1.0.2.apk
 ```
 
 脚本依次完成：
 
-1. 校验输入 APK 的 SHA-256，防止对不兼容版本进行修改。
-2. 使用 `apktool --no-src` 解包并原样保留官方 DEX。
-3. 修改 Manifest，加入 `Turbo IO` 启动入口和网络安全配置。
-4. 用 `javac` 编译 `enhancer/src/`，再由 `d8` 生成注入用的 `classes4.dex`。
-5. 重新构建 APK，并执行 `zipalign`。
-6. 使用本机 Android debug key 签名并运行 `apksigner verify`。
-7. 输出最终 APK 的 SHA-256。
+1. 校验输入 APK 哈希，解包并只在 `classes2.dex` 的语音入口增加路由包装；原方法体完整保留。
+2. 编译限定的演示类，生成 `classes4.dex`；Manifest 仅新增控制页入口。
+3. 以原 APK 为模板，仅替换 Manifest、`classes2.dex`，新增 `classes4.dex`。官方资源、assets、原生库和其他 DEX 逐字节保留。
+4. 执行 16 KB 原生库对齐、本地签名、签名验证与文件差异验证，生成 `verification.json`。
 
 构建产物位于：
 
@@ -163,13 +165,18 @@ adb install --no-incremental \
 
 安装完成后，桌面会同时出现官方 `RayNeo AI` 入口和新增的 `Turbo IO` 入口。
 
-### 4. 首次运行和眼镜消息测试
+两个入口使用独立任务，可通过最近任务或桌面 `Turbo IO` 图标返回控制页，无须杀进程。控制页的“查看诊断记录（重启后保留）”保存有大小上限的本机事件记录，不含 Key、录音或识别正文；进程重启后模式仍默认关闭。任务切换改动待真机验收。
 
-1. 先进入 `RayNeo AI`，完成必要权限、账号和眼镜连接流程。
-2. 打开 `Turbo IO`，点击“初始化官方 CoreConnect”。
-3. 点击“已连接”确认设备；只连接一副眼镜时，发送操作可以把设备 ID 留空。
-4. 在“眼镜消息推送”中填写标题和正文。首次测试保留“发送前开启眼镜通知总开关”勾选。
-5. 点击“推送通知到眼镜”。日志出现“已提交到 CoreConnect，UID=...”表示数据已交给设备通信层，最终展示结果仍以眼镜实测为准。
+### 4. 首次运行和 Paseo 眼镜模式
+
+1. 先进入 `RayNeo AI`，完成权限、账号和眼镜连接，保持只连接一副眼镜。
+2. 打开 `Turbo IO`，保存 MiniMax API Key。
+3. 填入 Paseo WebSocket URL 和可选 daemon 密码，先点“测试 Paseo 连接”。USB 首测可执行 `adb reverse tcp:6767 tcp:6767` 后填写 `ws://127.0.0.1:6767/ws`。
+4. 在 Paseo App/Desktop/CLI 中先创建会话，在官方 App 中开启需要的眼镜通知。
+5. 点击“开启 Paseo 眼镜模式”。可直接提问；也可说“列出会话”后选择并续聊，或说“新建会话”后选择工作区。
+6. 点击“关闭 Paseo 眼镜模式”，等状态确认为“已关闭”，再验证官方语音和其他功能。
+
+完整命令、正常流程与排障见 [Paseo × RayNeo 使用 SOP](docs/PASEO_RAYNEO_SOP.md)。主机自动测试：`enhancer/test/run.sh`。这不等于真机 Opus、蓝牙投递、助手页面显示或官方功能回归通过。
 
 ### 5. ADB 调试
 
@@ -180,30 +187,24 @@ adb logcat -c
 adb logcat | grep -E 'Turbo IO|AndroidRuntime|CoreConnect|rayneo'
 ```
 
-需要让手机访问电脑上运行的 Codex Bridge 时，假设本地端口为 `8787`：
+需要让手机访问电脑上运行的 Paseo daemon 时，默认端口为 `6767`：
 
 ```bash
-adb reverse tcp:8787 tcp:8787
+adb reverse tcp:6767 tcp:6767
 adb reverse --list
 ```
 
-然后在 Turbo IO 中填写 `http://127.0.0.1:8787`。测试结束后可以移除端口映射：
+然后在 Turbo IO 中填写 `ws://127.0.0.1:6767/ws`。测试结束后可以移除端口映射：
 
 ```bash
-adb reverse --remove tcp:8787
+adb reverse --remove tcp:6767
 ```
 
 如需重新安装并保留应用数据，再次执行 `adb install --no-incremental -r ...` 即可；只有签名不一致时才需要卸载。
 
 ## 运行原理简述
 
-增强包保留官方 `RayNeo AI` 启动入口，同时增加 `Turbo IO` 启动入口。Turbo IO 控制台直接复用官方包内 CoreConnect，并实现与 iOS 工程相同的 Codex Bridge 端点：
-
-- `GET /v1/state`
-- `POST /v1/message`
-- `POST /v1/stop`
-
-真机通过 `adb reverse` 调试电脑本地 bridge 时，可以填写 `http://127.0.0.1:<端口>`；其他地址要求 HTTPS。令牌使用 Android Keystore 加密保存。
+增强包保留官方 `RayNeo AI` 启动入口，同时增加 `Turbo IO` 启动入口。Turbo IO 复用同进程内官方 CoreConnect 与眼镜通信，另用独立 WebSocket 客户端直连原有 Paseo daemon。它实现 hello、会话目录、timeline、发送、等待完成和取消等现有 RPC，不注册或修改 daemon 接口。MiniMax Key 与可选 daemon 密码使用 AndroidKeyStore 加密保存。
 
 ## 当前边界
 

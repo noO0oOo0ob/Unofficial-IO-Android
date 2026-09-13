@@ -19,6 +19,41 @@ final class AssistantWire {
         return out.toByteArray();
     }
 
+    static byte[] answer(String text, String query, String roundId) {
+        return answer(text, query, roundId, true);
+    }
+
+    static byte[] answer(String text, String query, String roundId, boolean isFinal) {
+        String clean = requireText(text, 500, "回答");
+        String cleanQuery = requireText(query == null || query.trim().isEmpty() ? "语音命令" : query, 512, "问题");
+        String id = requireText(roundId, 80, "轮次");
+        return envelope(32, buildAnswerJson(clean, cleanQuery, id, isFinal));
+    }
+
+    private static String buildAnswerJson(String text, String query, String id, boolean isFinal) {
+        return "{\"sub\":\"paseo\",\"vendor\":\"turbo-io\",\"uuid\":" + quote(id)
+                + ",\"sid\":" + quote(id) + ",\"round\":1,\"timestamp\":"
+                + (System.currentTimeMillis() / 1000L) + ",\"query\":" + quote(query)
+                + ",\"domain\":\"chat\",\"intent\":\"chat\",\"payload\":{},\"offline\":false,"
+                + "\"answer\":{\"text\":" + quote(text) + ",\"isFinal\":" + isFinal + "}}";
+    }
+
+    static byte[] responseComplete() { return envelope(12, "{}"); }
+
+    private static byte[] envelope(int type, String json) {
+        byte[] body=json.getBytes(StandardCharsets.UTF_8);
+        if(body.length>8192)throw new IllegalArgumentException("助手消息超过协议限制");
+        ByteArrayOutputStream out=new ByteArrayOutputStream(body.length+12);
+        varintField(out,1,1);varintField(out,2,type);bytesField(out,3,body);return out.toByteArray();
+    }
+
+    private static String requireText(String value,int maxBytes,String name) {
+        String clean=value==null?"":value.trim();
+        if(clean.isEmpty())throw new IllegalArgumentException(name+"不能为空");
+        if(clean.getBytes(StandardCharsets.UTF_8).length>maxBytes)throw new IllegalArgumentException(name+"过长");
+        return clean;
+    }
+
     private static void varintField(ByteArrayOutputStream out, int field, int value) {
         varint(out, field << 3); varint(out, value);
     }

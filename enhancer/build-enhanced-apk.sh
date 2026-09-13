@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-APK="${1:-/Users/sheng/Downloads/RayNeo_AI_1.0.2.apk}"
+APK="${1:-$ROOT/../rayneo-local-samples/RayNeo_AI_1.0.2.apk}"
 EXPECTED="32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093"
 BUILD="$ROOT/enhancer/build"
 DECODED="$BUILD/decoded"
@@ -25,22 +25,32 @@ ACTUAL="$(shasum -a 256 "$APK" | awk '{print $1}')"
 
 rm -rf "$BUILD"
 mkdir -p "$CLASSES" "$DEX" "$OUTPUT"
-java -jar "$APKTOOL" d -f -s -p "$BUILD/framework" "$APK" -o "$DECODED"
+java -jar "$APKTOOL" d -f -p "$BUILD/framework" "$APK" -o "$DECODED"
 node "$ROOT/enhancer/patch-manifest.mjs" "$DECODED/AndroidManifest.xml"
-mkdir -p "$DECODED/res/xml"
-cp "$ROOT/enhancer/res/xml/turbo_network_security_config.xml" "$DECODED/res/xml/turbo_network_security_config.xml"
+node "$ROOT/enhancer/patch-assistant.mjs" "$DECODED"
+# Only classes2 is patched. Keep the other official DEX files byte-for-byte.
+rm -rf "$DECODED/smali" "$DECODED/smali_classes3"
+unzip -p "$APK" classes.dex > "$DECODED/classes.dex"
+unzip -p "$APK" classes3.dex > "$DECODED/classes3.dex"
 
-find "$ROOT/enhancer/src" -name '*.java' -print0 | xargs -0 javac \
-  -source 8 -target 8 -encoding UTF-8 -classpath "$ANDROID_JAR" -d "$CLASSES"
+# The previous diagnostic console/runtime and Codex bridge are intentionally not packaged.
+SOURCES=()
+for name in EnhancedActivity ApiKeyStore MinimaxResponsesClient PaseoConfigStore PaseoWebSocket PaseoClient VoiceCommandRouter MinimaxIntentRouter AssistantWire DemoWire SpeechBuffer MinimaxAsr VendorTransport DemoHooks DemoController NotificationWire DemoTrace TraceJournal; do
+  SOURCES+=("$ROOT/enhancer/src/io/turboio/enhanced/$name.java")
+done
+javac -source 8 -target 8 -encoding UTF-8 -classpath "$ANDROID_JAR" -d "$CLASSES" "${SOURCES[@]}"
 jar --create --file "$BUILD/injector.jar" -C "$CLASSES" .
 "$TOOLS/d8" --min-api 29 --output "$DEX" "$BUILD/injector.jar"
 cp "$DEX/classes.dex" "$DECODED/classes4.dex"
 
 java -jar "$APKTOOL" b -p "$BUILD/framework" "$DECODED" -o "$BUILD/unsigned.apk"
-"$TOOLS/zipalign" -f -p 4 "$BUILD/unsigned.apk" "$BUILD/aligned.apk"
+python3 "$ROOT/enhancer/assemble-preserving.py" "$APK" "$BUILD/unsigned.apk" "$BUILD/preserved.apk" "$TOOLS/aapt2"
+"$TOOLS/zipalign" -f -P 16 4 "$BUILD/preserved.apk" "$BUILD/aligned.apk"
 "$TOOLS/apksigner" sign \
   --ks "$KEYSTORE" --ks-key-alias androiddebugkey \
   --ks-pass pass:android --key-pass pass:android \
   --out "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk" "$BUILD/aligned.apk"
 "$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"
 shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"
+
+python3 "$ROOT/enhancer/verify-apk.py" "$APK" "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk" "$TOOLS/aapt2" "$OUTPUT/verification.json"

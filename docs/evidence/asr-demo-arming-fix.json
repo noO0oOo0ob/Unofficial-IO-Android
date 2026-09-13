@@ -1,0 +1,25 @@
+{
+  "originalSha256": "32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093",
+  "enhancedSha256": "e2a479af6808dda330e3998a474973e19d57315090462d62e4bc9431a8b6f738",
+  "changedOriginalEntries": [
+    "AndroidManifest.xml",
+    "classes2.dex"
+  ],
+  "addedEntries": [
+    "classes4.dex"
+  ],
+  "identicalVendorFiles": 3426,
+  "identicalResourcesAssetsNativeFiles": 3116,
+  "manifestOnlyAddsDemoActivity": true,
+  "hardwareVerified": false,
+  "controllerAssertions": 195,
+  "realAdapterChecks": 26,
+  "installedThisTurn": false,
+  "observedOldLog": {
+    "running": false,
+    "mock": false,
+    "localRecorder": true
+  },
+  "blockingArbiterBit": "not recorded by installed build",
+  "change": "Arm mode separately from acquisition; rearm historic interrupt only on an idle ordinary wake; expose individual busy reasons"
+}
