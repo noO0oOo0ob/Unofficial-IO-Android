@@ -27,4 +27,20 @@ if (!xml.includes('io.turboio.enhanced.EnhancedActivity')) {
   if (index < 0) throw new Error('application end tag not found');
   xml = xml.slice(0, index) + activity + xml.slice(index);
 }
+if (!xml.includes('io.turboio.enhanced.AmapNavigationListenerService')) {
+  const service = `
+        <service
+            android:name="io.turboio.enhanced.AmapNavigationListenerService"
+            android:label="Turbo IO 高德导航"
+            android:exported="false"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+`;
+  const index = xml.lastIndexOf('</application>');
+  if (index < 0) throw new Error('application end tag not found');
+  xml = xml.slice(0, index) + service + xml.slice(index);
+}
 fs.writeFileSync(file, xml);

@@ -10,6 +10,11 @@ for name in DemoWire AssistantWire SpeechBuffer NotificationWire VoiceCommandRou
 echo "$ROOT/enhancer/test/DemoTest.java" >> "$OUT/sources"
 javac -encoding UTF-8 -cp "$JSON_JAR" -d "$OUT/classes" @"$OUT/sources"
 java -cp "$OUT/classes:$JSON_JAR" io.turboio.enhanced.DemoTest
+mkdir -p "$OUT/amap-classes"
+javac -encoding UTF-8 -d "$OUT/amap-classes" \
+  "$ROOT/enhancer/src/io/turboio/enhanced/AmapNavigationText.java" \
+  "$ROOT/enhancer/test/AmapNavigationTextTest.java"
+java -cp "$OUT/amap-classes" io.turboio.enhanced.AmapNavigationTextTest
 mkdir -p "$OUT/model-classes"
 javac -encoding UTF-8 -cp "$JSON_JAR" -d "$OUT/model-classes" \
   "$ROOT/enhancer/test/stubs/android/content/Context.java" \

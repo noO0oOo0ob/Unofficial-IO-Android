@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.text.InputType;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,8 +17,9 @@ import java.util.concurrent.Executors;
 public final class EnhancedActivity extends Activity {
     private DemoController controller;
     private EditText key,paseoUrl,paseoPassword;
-    private TextView status,transcript,saved,paseoSaved,diagnostics;
-    private Button toggle,save,clear,savePaseo,testPaseo,clearPaseoPassword;
+    private TextView status,transcript,saved,paseoSaved,diagnostics,amapStatus;
+    private Button toggle,save,clear,savePaseo,testPaseo,clearPaseoPassword,notificationAccess;
+    private CheckBox amapNavigation;
     private final Handler main=new Handler(Looper.getMainLooper());
     private final ExecutorService worker=Executors.newSingleThreadExecutor();
     private boolean busy,visible;
@@ -30,6 +32,17 @@ public final class EnhancedActivity extends Activity {
         TextView title=label(root,"Turbo IO · Paseo 眼镜桥接");title.setTextSize(23);
         label(root,"眼镜语音 → MiniMax ASR → 带上下文的 MiniMax 路由。普通问答由 MiniMax 流式回答并可自动联网搜索；只有代码任务和会话命令进入 Paseo/Codex。");
         button(root,"打开官方 App",()->{Intent intent=new Intent();intent.setClassName(getPackageName(),"com.rayneo.venus.MainActivity");intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);startActivity(intent);});
+        label(root,"高德地图导航提示");
+        amapNavigation=new CheckBox(this);amapNavigation.setText("把手机高德导航通知转发到眼镜");
+        amapNavigation.setChecked(AmapNavigationListenerService.isEnabled(this));
+        amapNavigation.setOnCheckedChangeListener((button,checked)->{
+            AmapNavigationListenerService.setEnabled(this,checked);
+            if(checked&&!AmapNavigationListenerService.hasAccess(this))openNotificationAccess();
+            render();
+        });root.addView(amapNavigation);
+        notificationAccess=button(root,"打开系统通知使用权设置",this::openNotificationAccess);
+        amapStatus=label(root,"");
+        label(root,"仅处理 com.autonavi.minimap 的标准导航通知；默认关闭。请同时在官方 RayNeo 设置中打开眼镜通知总开关。不会启动第二套导航，也不读取其他应用的通知正文。");
         label(root,"MiniMax API Key");
         key=new EditText(this);key.setHint("在此粘贴 API Key");key.setSingleLine(true);key.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
         key.setSaveEnabled(false);key.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);root.addView(key);
@@ -70,8 +83,12 @@ public final class EnhancedActivity extends Activity {
         textIfChanged(status,controller.status());textIfChanged(diagnostics,controller.diagnostics());
         textIfChanged(saved,controller.keys.hasKey()?"已保存 Key（不回显）":"尚未保存 Key");
         textIfChanged(paseoSaved,controller.paseoUrl().isEmpty()?"尚未保存 Paseo 地址":"已保存："+controller.paseoUrl()+(controller.paseoConfig.hasPassword()?"（含密码）":"（无密码）"));
+        boolean navigationEnabled=AmapNavigationListenerService.isEnabled(this),access=AmapNavigationListenerService.hasAccess(this);
+        if(amapNavigation.isChecked()!=navigationEnabled)amapNavigation.setChecked(navigationEnabled);
+        textIfChanged(amapStatus,!navigationEnabled?"状态：已关闭":access?"状态：已开启，等待高德导航通知":"状态：已开启，但尚未授予通知使用权");
         textIfChanged(transcript,"最近识别：\n"+controller.transcript());
     }
+    private void openNotificationAccess(){try{startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));}catch(Exception e){Toast.makeText(this,"无法打开通知使用权设置",Toast.LENGTH_LONG).show();}}
     @Override protected void onResume(){super.onResume();visible=true;main.post(refresh);worker.execute(()->DemoTrace.record("state "+VendorTransport.diagnostics()));}
     @Override protected void onPause(){visible=false;main.removeCallbacks(refresh);key.setText("");paseoPassword.setText("");super.onPause();}
     @Override protected void onDestroy(){worker.shutdown();super.onDestroy();}

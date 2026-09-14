@@ -35,7 +35,7 @@ unzip -p "$APK" classes3.dex > "$DECODED/classes3.dex"
 
 # The previous diagnostic console/runtime and Codex bridge are intentionally not packaged.
 SOURCES=()
-for name in EnhancedActivity ApiKeyStore MinimaxResponsesClient PaseoConfigStore PaseoWebSocket PaseoClient VoiceCommandRouter MinimaxIntentRouter AssistantWire DemoWire SpeechBuffer MinimaxAsr VendorTransport DemoHooks DemoController NotificationWire DemoTrace TraceJournal; do
+for name in EnhancedActivity ApiKeyStore MinimaxResponsesClient PaseoConfigStore PaseoWebSocket PaseoClient VoiceCommandRouter MinimaxIntentRouter AssistantWire DemoWire SpeechBuffer MinimaxAsr VendorTransport DemoHooks DemoController NotificationWire AmapNavigationText AmapNavigationBridge AmapNavigationListenerService DemoTrace TraceJournal; do
   SOURCES+=("$ROOT/enhancer/src/io/turboio/enhanced/$name.java")
 done
 javac -source 8 -target 8 -encoding UTF-8 -classpath "$ANDROID_JAR" -d "$CLASSES" "${SOURCES[@]}"

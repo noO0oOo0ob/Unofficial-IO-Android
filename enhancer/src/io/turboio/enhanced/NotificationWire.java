@@ -27,21 +27,28 @@ final class NotificationWire {
     }
 
     static Packet notification(String title, String content) {
+        return notification("com.rayneo.venus.pub", "Turbo IO", 0, title, content, null);
+    }
+
+    static Packet notification(String appId, String appName, int category, String title, String content, String stableUid) {
+        String cleanAppId = requireText(appId, "应用包名", 160);
+        String cleanAppName = requireText(appName, "应用名称", 80);
         String cleanTitle = requireText(title, "标题", 80);
         String cleanContent = requireText(content, "正文", 500);
-        int value = NEXT_UID.updateAndGet(current -> current >= Integer.MAX_VALUE - 1 ? 1 : current + 1);
-        String uid = Integer.toString(value);
+        String uid = stableUid == null || stableUid.trim().isEmpty()
+                ? Integer.toString(NEXT_UID.updateAndGet(current -> current >= Integer.MAX_VALUE - 1 ? 1 : current + 1))
+                : requireText(stableUid, "通知 UID", 80);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.US);
         format.setTimeZone(TimeZone.getDefault());
         String json = "{"
                 + "\"notificationUID\":" + quote(uid) + ","
-                + "\"appId\":\"com.rayneo.venus.pub\","
-                + "\"appName\":\"Turbo IO\","
+                + "\"appId\":" + quote(cleanAppId) + ","
+                + "\"appName\":" + quote(cleanAppName) + ","
                 + "\"title\":" + quote(cleanTitle) + ","
                 + "\"subtitle\":\"\","
                 + "\"content\":" + quote(cleanContent) + ","
                 + "\"timestamp\":" + quote(format.format(new Date())) + ","
-                + "\"category\":0,\"reply\":false,\"type\":1}"
+                + "\"category\":" + category + ",\"reply\":false,\"type\":1}"
                 ;
         return new Packet(uid, envelope(2, json));
     }

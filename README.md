@@ -29,6 +29,7 @@
 - 支持列会话、分页、按编号/标题选择、查看详情、最后回复、回答分段、退出助手和二次确认停止。
 - 直接使用 Paseo daemon v1 WebSocket RPC，支持可选密码；不改 daemon，也不依赖 Paseo 手机 App 中转。
 - 普通模型回答在助手页使用 type 32/type 12；超过一屏后流式刷新始终展示最新文本窗口，完成时停留在最后一段，可说“上一段”回看。Codex 异步执行结果始终使用普通通知，不追加到助手回答流。完整内容仍可在 Paseo App 查看。
+- 可选开启高德导航通知镜像：监听手机高德 `com.autonavi.minimap` 的标准导航通知，提取转向文字并通过 business 21/type 2 显示到眼镜；不接入高德 SDK，也不启动第二套导航。
 - MiniMax API Key 固定用于 ASR、意图识别和 Responses 回答；中国区接口统一使用 `api.minimax.cn`，当前版本隐藏其他模型配置。Key 使用 Android KeyStore 加密并保存在不参与备份的本机目录。
 - 关闭模式取消本轮工作，等待已发出的停止/退出指令结果；OFF 直接执行官方语音方法。
 - 支持读取 Paseo 工作区并在眼镜端新建 Codex 会话；不实现 TTS、实时流式 ASR、Paseo Relay/SSH，不重建官方眼镜连接、不改通知总开关。
@@ -126,7 +127,7 @@ shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.2.apk
 脚本依次完成：
 
 1. 校验输入 APK 哈希，解包并只在 `classes2.dex` 的语音入口增加路由包装；原方法体完整保留。
-2. 编译限定的演示类，生成 `classes4.dex`；Manifest 仅新增控制页入口。
+2. 编译限定的演示类，生成 `classes4.dex`；Manifest 新增控制页入口和独立的高德导航通知监听组件。
 3. 以原 APK 为模板，仅替换 Manifest、`classes2.dex`，新增 `classes4.dex`。官方资源、assets、原生库和其他 DEX 逐字节保留。
 4. 执行 16 KB 原生库对齐、本地签名、签名验证与文件差异验证，生成 `verification.json`。
 
@@ -175,6 +176,8 @@ adb install --no-incremental \
 4. 在 Paseo App/Desktop/CLI 中先创建会话，在官方 App 中开启需要的眼镜通知。
 5. 点击“开启 Paseo 眼镜模式”。可直接提问；也可说“列出会话”后选择并续聊，或说“新建会话”后选择工作区。
 6. 点击“关闭 Paseo 眼镜模式”，等状态确认为“已关闭”，再验证官方语音和其他功能。
+
+高德导航提示可独立于 Paseo 模式使用：在 Turbo IO 控制页勾选“把手机高德导航通知转发到眼镜”，按提示进入系统“通知使用权”页面并允许 `Turbo IO 高德导航`，同时保持官方 RayNeo 的眼镜通知总开关开启。该功能默认关闭，只处理高德 Android 包名；通知未暴露标准文字或手机系统限制后台监听时不会转发。
 
 完整命令、正常流程与排障见 [Paseo × RayNeo 使用 SOP](docs/PASEO_RAYNEO_SOP.md)。主机自动测试：`enhancer/test/run.sh`。这不等于真机 Opus、蓝牙投递、助手页面显示或官方功能回归通过。
 

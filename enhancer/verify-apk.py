@@ -18,16 +18,16 @@ with zipfile.ZipFile(original) as a,zipfile.ZipFile(enhanced) as b:
     assert b'InProcessRayNeoRuntime' not in b.read('classes4.dex'),'Legacy runtime packaged'
     assert b'CodexBridgeClient' not in b.read('classes4.dex'),'Legacy bridge packaged'
     names=[n for n in original_names if n.startswith(('assets/','lib/','res/'))]
-# Compare compiled Manifest tree, ignoring XML line numbers and the one added Activity.
+# Compare compiled Manifest tree, ignoring XML line numbers and the two added components.
 def tree(apk):
     text=subprocess.check_output([aapt,'dump','xmltree',apk,'--file','AndroidManifest.xml'],text=True)
     lines=text.splitlines();clean=[];i=0
     while i<len(lines):
         line=lines[i]
-        if line.lstrip().startswith('E: activity '):
+        if line.lstrip().startswith(('E: activity ','E: service ')):
             indent=len(line)-len(line.lstrip());j=i+1
             while j<len(lines) and len(lines[j])-len(lines[j].lstrip())>indent:j+=1
-            if any('io.turboio.enhanced.EnhancedActivity' in x for x in lines[i:j]):i=j;continue
+            if any(('io.turboio.enhanced.EnhancedActivity' in x or 'io.turboio.enhanced.AmapNavigationListenerService' in x) for x in lines[i:j]):i=j;continue
         clean.append(re.sub(r' \(line=\d+\)','',line));i+=1
     return clean
 base,actual=tree(original),tree(enhanced)
@@ -38,6 +38,6 @@ if normalize(base)!=normalize(actual):
     import difflib
     print('\n'.join(difflib.unified_diff(base,actual)))
     raise AssertionError('Unexpected Manifest change')
-report={'originalSha256':digest(original),'enhancedSha256':digest(enhanced),'changedOriginalEntries':changed,'addedEntries':['classes4.dex'],'identicalVendorFiles':len(original_names)-2,'identicalResourcesAssetsNativeFiles':len(names),'manifestOnlyAddsDemoActivity':True,'hardwareVerified':False}
+report={'originalSha256':digest(original),'enhancedSha256':digest(enhanced),'changedOriginalEntries':changed,'addedEntries':['classes4.dex'],'identicalVendorFiles':len(original_names)-2,'identicalResourcesAssetsNativeFiles':len(names),'manifestOnlyAddsDemoActivityAndAmapListener':True,'hardwareVerified':False}
 with open(output,'w') as f:json.dump(report,f,ensure_ascii=False,indent=2);f.write('\n')
 print(json.dumps(report,ensure_ascii=False,indent=2))

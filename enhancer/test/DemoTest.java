@@ -19,6 +19,7 @@ public class DemoTest {
  public static void main(String[] args)throws Exception {
   DemoWire p=DemoWire.parse(DemoWire.control(2,1));check(p.type==2&&p.json.equals("{\"rc\":1}"),"control protocol");
   check(DemoWire.parse(AssistantWire.asrText("你好")).type==5,"ASR wire");DemoWire answer=DemoWire.parse(AssistantWire.answer("回答","问题","round"));org.json.JSONObject answerJson=new org.json.JSONObject(answer.json);check(answer.type==32&&"回答".equals(answerJson.getJSONObject("answer").getString("text"))&&answerJson.getJSONObject("answer").getBoolean("isFinal")&&"paseo".equals(answerJson.getString("sub")),"final answer wire");check(DemoWire.parse(AssistantWire.responseComplete()).type==12,"complete wire");
+  NotificationWire.Packet amap=NotificationWire.notification("com.autonavi.minimap","高德地图",6010,"高德导航","前方100米右转","stable-1");org.json.JSONObject amapJson=new org.json.JSONObject(DemoWire.parse(amap.bytes).json);check("stable-1".equals(amap.uid)&&"com.autonavi.minimap".equals(amapJson.getString("appId"))&&amapJson.getInt("category")==6010,"AMap ordinary notification wire");
   for(byte[] bad:new byte[][]{new byte[0],{8},{0},{8,1,34,(byte)255},{8,2}}){try{DemoWire.parse(bad);throw new AssertionError("accepted malformed");}catch(IllegalArgumentException expected){checks++;}}
   SpeechBuffer b=new SpeechBuffer();for(int i=0;i<20;i++)check(!b.add(voiced()),"speech");for(int i=0;i<49;i++)check(!b.add(new byte[640]),"silence");check(b.add(new byte[640]),"endpoint");check(b.takeWav().length==44+70*640,"wav");
 
