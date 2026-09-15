@@ -16,7 +16,7 @@ final class SpeechBuffer {
             if(windowSamples==320) {
                 if(energy/320>500L*500) { voicedSamples+=320;quietSamples=0; } else quietSamples+=320;
                 energy=0;windowSamples=0;
-                if(voicedSamples>=4800&&quietSamples>=16000)ended=true;
+                if(voicedSamples>=4800&&quietSamples>=25600)ended=true;
             }
         }
         return ended||size>=640000||(!hasSpeech()&&size>=160000);

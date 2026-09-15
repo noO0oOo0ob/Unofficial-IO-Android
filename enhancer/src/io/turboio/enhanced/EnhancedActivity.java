@@ -21,10 +21,13 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,9 +62,11 @@ public final class EnhancedActivity extends Activity {
     private String deviceState="检查中",logFilter="ALL";
 
     private TextView modeState,modeStatus,modeButton,deviceSummary,agentSummary,runtimeSummary,recentTranscript,finishButton;
-    private EditText key,sourceName,sourceUrl,sourcePassword,maBaseUrl,maApiKey,maEnvironmentId,maAgentId,maTitle,maVersion,assistantText,businessId,rawHex,logSearch;
+    private EditText key,sourceName,sourceUrl,sourcePassword,maBaseUrl,maApiKey,maEnvironmentId,maAgentId,maTitle,maVersion,debugContent,logSearch;
     private TextView keySaved,platformSaved,maKeySaved,amapStatus,debugResult,logText,logBadge,pauseLogs;
-    private TextView sendAssistant,sendRaw,saveKey,clearKey,testPaseo,managePlatform,savePaseoSource,deletePaseoSource,saveManagedAgent,clearManagedAgentKey,notificationAccess;
+    private TextView sendDebug,debugTypeHelp,saveKey,clearKey,testPaseo,managePlatform,savePaseoSource,deletePaseoSource,saveManagedAgent,clearManagedAgentKey,notificationAccess;
+    private Spinner debugType;
+    private DebugMessageSender.MessageType selectedDebugType=DebugMessageSender.MessageType.ASR_TEXT;
     private Switch amapNavigation;
     private ScrollView logsScroll;
     private String editingSourceId;
@@ -140,11 +145,11 @@ public final class EnhancedActivity extends Activity {
         LinearLayout connection=card();LinearLayout connectionRow=row();connectionRow.addView(text("⌁  当前目标",12,MUTED,Typeface.NORMAL),new LinearLayout.LayoutParams(0,dp(30),1));connectionRow.addView(badge("自动识别",ACCENT,ACCENT_SOFT));connection.addView(connectionRow);
         connection.addView(text("由官方 App 管理的唯一连接设备",14,TEXT,Typeface.BOLD));body.addView(connection,matchWrap(0,0,0,dp(12)));
 
-        LinearLayout assistant=card();assistant.addView(sectionTitle("♩  Assistant / ASR","Business 13"));assistantText=input("输入要显示到眼镜助手页的文字",false);assistantText.setMinHeight(dp(82));assistantText.setGravity(Gravity.TOP);assistantText.setSingleLine(false);assistant.addView(assistantText,matchWrap(0,dp(10),0,dp(10)));
-        sendAssistant=button("➤  提交到发送链路",true);sendAssistant.setOnClickListener(v->{String value=assistantText.getText().toString();run(()->DebugMessageSender.sendAssistant(controller,value),result->{debugResult.setText(result);assistantText.setText("");});});assistant.addView(sendAssistant);body.addView(assistant,matchWrap(0,0,0,dp(12)));
-
-        LinearLayout raw=card();raw.addView(sectionTitle("{ }  原始 Business 消息","高级调试"));LinearLayout fields=row();businessId=input("Business ID",true);businessId.setText("13");fields.addView(businessId,weighted(1,0,dp(5),0));rawHex=input("Hex payload，例如 08011005",false);fields.addView(rawHex,weighted(2,dp(5),0,0));raw.addView(fields,matchWrap(0,dp(10),0,dp(10)));
-        sendRaw=button("➤  发送原始消息",false);sendRaw.setOnClickListener(v->{String business=businessId.getText().toString(),payload=rawHex.getText().toString();run(()->DebugMessageSender.sendRaw(controller,business,payload),result->{debugResult.setText(result);rawHex.setText("");});});raw.addView(sendRaw);body.addView(raw,matchWrap(0,0,0,dp(12)));
+        LinearLayout message=card();message.addView(sectionTitle("✦  测试消息","自动编码协议数据"));DebugMessageSender.MessageType[] types=DebugMessageSender.MessageType.values();String[] labels=new String[types.length];for(int i=0;i<types.length;i++)labels[i]=types[i].label();
+        debugType=new Spinner(this);ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,labels);adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);debugType.setAdapter(adapter);debugType.setBackground(round(SURFACE_2,10));debugType.setPadding(dp(8),0,dp(8),0);message.addView(debugType,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,dp(48)));
+        debugTypeHelp=text("",11,MUTED,Typeface.NORMAL);message.addView(debugTypeHelp,matchWrap(0,dp(8),0,dp(8)));debugContent=input(types[0].hint,false);debugContent.setMinHeight(dp(90));debugContent.setGravity(Gravity.TOP);debugContent.setSingleLine(false);message.addView(debugContent,matchWrap(0,0,0,dp(10)));
+        debugType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){public void onNothingSelected(AdapterView<?> parent){}public void onItemSelected(AdapterView<?> parent,View view,int position,long id){selectedDebugType=types[position];debugContent.setHint(selectedDebugType.hint);debugTypeHelp.setText("Business "+selectedDebugType.business+" · Type "+selectedDebugType.wireType+"\n"+selectedDebugType.description);}});
+        sendDebug=button("➤  转换并发送",true);sendDebug.setOnClickListener(v->{String value=debugContent.getText().toString();DebugMessageSender.MessageType type=selectedDebugType;run(()->DebugMessageSender.send(controller,type,value),result->{debugResult.setText(result);debugContent.setText("");});});message.addView(sendDebug);body.addView(message,matchWrap(0,0,0,dp(12)));
         debugResult=text("发送结果会显示在这里。成功回调不代表镜片已经显示。",12,MUTED,Typeface.NORMAL);debugResult.setBackground(round(Color.rgb(24,35,31),11));debugResult.setPadding(dp(12),dp(11),dp(12),dp(11));body.addView(debugResult);
         return scroll;
     }
@@ -230,7 +235,7 @@ public final class EnhancedActivity extends Activity {
         if(key!=null){setEnabled(editable,key,saveKey,clearKey,managePlatform);keySaved.setText(controller.keys.hasKey()?"已保存 Key（不会回显）":"尚未保存 Key");platformSaved.setText("当前使用："+controller.platformLabel());boolean nav=AmapNavigationListenerService.isEnabled(this),access=AmapNavigationListenerService.hasAccess(this);if(amapNavigation.isChecked()!=nav)amapNavigation.setChecked(nav);amapStatus.setText(!nav?"状态：已关闭":access?"状态：已开启，等待高德导航通知":"状态：已开启，但尚未授予通知使用权");}
         for(View action:sourceActions){action.setEnabled(editable);action.setAlpha(editable?1f:.42f);}if(sourceName!=null)setEnabled(editable,sourceName,sourceUrl,sourcePassword,savePaseoSource,deletePaseoSource);
         if(maBaseUrl!=null)setEnabled(editable,maBaseUrl,maApiKey,maEnvironmentId,maAgentId,maTitle,maVersion,saveManagedAgent,clearManagedAgentKey);
-        if(sendAssistant!=null){setEnabled(debuggable,assistantText,businessId,rawHex,sendAssistant,sendRaw);if(!debuggable&&!busy)debugResult.setText("请先关闭 TurboIO 接管模式并等待当前任务结束。\n发送成功回调不代表镜片已经显示。");}
+        if(sendDebug!=null){setEnabled(debuggable,debugType,debugContent,sendDebug);if(!debuggable&&!busy)debugResult.setText("请先关闭 TurboIO 接管模式并等待当前任务结束。\n发送成功回调不代表镜片已经显示。");}
         if(currentPage==Page.LOGS&&!logsPaused)renderLogs();
     }
 

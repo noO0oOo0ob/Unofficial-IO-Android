@@ -34,6 +34,7 @@
 - 开启接管模式时根据平台枚举完成适配器装配和配置校验；实际网络连接延迟到第一次会话操作。Paseo 与 Managed Agent 分别保存最近会话，不共享协议字段。
 - 普通模型回答在助手页使用 type 32/type 12；超过一屏后流式刷新始终展示最新文本窗口，完成时停留在最后一段，可说“上一段”回看。Codex 异步执行结果始终使用普通通知，不追加到助手回答流。完整内容仍可在 Paseo App 查看。
 - 可选开启高德导航通知镜像：监听手机高德 `com.autonavi.minimap` 的标准导航通知，提取转向文字并通过 business 21/type 2 显示到眼镜；不接入高德 SDK，也不启动第二套导航。
+- 调试页提供 ASR 文本（business 13/type 5）、助手回答（business 13/type 32）和普通通知（business 21/type 2）三种测试消息；选择类型后输入提示联动，应用自动编码协议 payload，不要求手工输入 Hex。
 - MiniMax API Key 固定用于 ASR、意图识别和 Responses 回答；中国区接口统一使用 `api.minimax.cn`，当前版本隐藏其他模型配置。Key 使用 Android KeyStore 加密并保存在不参与备份的本机目录。
 - 关闭模式取消本轮工作，等待已发出的停止/退出指令结果；OFF 直接执行官方语音方法。
 - 支持读取 Paseo 工作区并在眼镜端新建 Codex 会话；不实现 TTS、实时流式 ASR、Paseo Relay/SSH，不重建官方眼镜连接、不改通知总开关。
