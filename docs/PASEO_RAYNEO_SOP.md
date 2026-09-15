@@ -84,11 +84,11 @@ paseo run --provider codex/gpt-5.5 \
 2. 在官方设置中允许眼镜通知，否则退出助手页后的完成提醒可能不可见。
 3. 打开 `Turbo IO`，保存 MiniMax API Key。该 Key 固定用于 ASR、意图识别以及 MiniMax Responses 联网流式回答。
 4. 当前版本不显示其他聊天模型配置；后续会单独设计多 Provider 的长期方案。
-5. 填写 Paseo WebSocket URL；daemon 有密码时一并输入。密码留空会保留已经保存的值，需要删除时点“删除本机 Paseo 密码”。
-6. 点“测试 Paseo 连接”，看到“Paseo 连接测试成功”。
-7. 点“开启 Paseo 眼镜模式”。模式只在当前 App 进程有效，进程重启后默认关闭。
+5. 进入“设置 → 管理源”，添加一个 Paseo 源并填写名称、WebSocket URL；daemon 有密码时一并输入。点“保存并测试连接”，看到连接成功提示。
+6. 可继续添加“公司电脑”“家里电脑”等源。每个源独立保存密码、Client ID、最近会话和工作区；在源列表点“切换到此源”即可切换。切换、编辑或删除前必须先关闭 TurboIO 接管模式。
+7. 点“开启接管模式”。TurboIO 接管模式只在当前 App 进程有效，进程重启后默认关闭；Paseo 是其中的代码任务与会话能力。
 
-MiniMax Key 与 Paseo 密码均由 AndroidKeyStore 加密保存，不写入 APK、诊断记录或系统备份。
+旧版单一 Paseo 配置会自动迁移为名为“我的电脑”的第一个源。MiniMax Key 与各 Paseo 源密码均由 AndroidKeyStore 加密保存，不写入 APK、诊断记录或系统备份。
 
 ## 五、可说的提示语
 

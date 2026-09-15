@@ -1,11 +1,14 @@
 package io.turboio.unofficial;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Build;
 
 import dalvik.system.DexClassLoader;
@@ -115,17 +118,23 @@ final class BundledRayNeoRuntime {
         return output;
     }
 
+    @SuppressLint("MissingPermission")
     List<String> systemBondedDevices() {
+        requireBluetoothConnectPermission();
         return formatBluetoothDevices(bluetoothAdapter().getBondedDevices());
     }
 
+    @SuppressLint("MissingPermission")
     List<String> systemGattDevices() {
+        requireBluetoothConnectPermission();
         BluetoothManager manager = activity.getSystemService(BluetoothManager.class);
         if (manager == null) throw new IllegalStateException("系统 BluetoothManager 不可用");
         return formatBluetoothDevices(manager.getConnectedDevices(BluetoothProfile.GATT));
     }
 
+    @SuppressLint("MissingPermission")
     String preferredSystemDeviceId() {
+        requireBluetoothConnectPermission();
         Set<BluetoothDevice> devices = bluetoothAdapter().getBondedDevices();
         for (BluetoothDevice device : devices) {
             String name = device.getName();
@@ -335,7 +344,17 @@ final class BundledRayNeoRuntime {
         return adapter;
     }
 
-    private static List<String> formatBluetoothDevices(Iterable<BluetoothDevice> devices) {
+    private void requireBluetoothConnectPermission() {
+        if (Build.VERSION.SDK_INT >= 31
+                && activity.checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT)
+                != PackageManager.PERMISSION_GRANTED) {
+            throw new SecurityException("缺少附近设备权限，请先允许蓝牙连接权限");
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private List<String> formatBluetoothDevices(Iterable<BluetoothDevice> devices) {
+        requireBluetoothConnectPermission();
         List<String> output = new ArrayList<>();
         for (BluetoothDevice device : devices) {
             String name = device.getName();

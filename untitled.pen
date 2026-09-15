@@ -129,7 +129,8 @@
                       "fill": "#8B908E",
                       "content": "RayNeo 智能眼镜控制台",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -268,7 +269,8 @@
                                   "fill": "#4DB596",
                                   "content": "已连接 · BLE",
                                   "fontFamily": "Inter",
-                                  "fontSize": 12
+                                  "fontSize": 12,
+                                  "fontWeight": "normal"
                                 }
                               ]
                             }
@@ -335,7 +337,8 @@
                               "fill": "#8B908E",
                               "content": "电量",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -390,7 +393,8 @@
                               "fill": "#8B908E",
                               "content": "链路",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -445,7 +449,8 @@
                               "fill": "#8B908E",
                               "content": "运行时",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -680,7 +685,8 @@
                           "fill": "#8B908E",
                           "content": "Assistant / ASR",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -737,7 +743,8 @@
                           "fill": "#8B908E",
                           "content": "Business payload",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -803,7 +810,8 @@
                           "fill": "#8B908E",
                           "content": "事件与错误",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -860,7 +868,8 @@
                           "fill": "#8B908E",
                           "content": "版本与完整性",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -972,7 +981,8 @@
                       "fill": "#F2F4F3",
                       "content": "设备",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1007,7 +1017,8 @@
                       "fill": "#F2F4F3",
                       "content": "调试",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1042,7 +1053,8 @@
                       "fill": "#F2F4F3",
                       "content": "设置",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1180,7 +1192,8 @@
                       "fill": "#8B908E",
                       "content": "向眼镜发送 Assistant 消息",
                       "fontFamily": "Inter",
-                      "fontSize": 13
+                      "fontSize": 13,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1267,7 +1280,8 @@
                           "fill": "#8B908E",
                           "content": "目标设备",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         },
                         {
                           "type": "text",
@@ -1353,7 +1367,8 @@
                       "fill": "#8B908E",
                       "content": "Business 13",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1378,7 +1393,8 @@
                       "fill": "#F2F4F3",
                       "content": "提醒我十分钟后检查 TurboIO 的连接状态",
                       "fontFamily": "Inter",
-                      "fontSize": 16
+                      "fontSize": 16,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -1387,7 +1403,8 @@
                       "fill": "#676C6A",
                       "content": "21 / 200",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1518,7 +1535,8 @@
                           "fill": "#8B908E",
                           "content": "Business ID 与十六进制 Payload",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -1589,7 +1607,8 @@
                           "fill": "#8B908E",
                           "content": "清除",
                           "fontFamily": "Inter",
-                          "fontSize": 10
+                          "fontSize": 10,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -1697,7 +1716,8 @@
                       "fill": "#5E6462",
                       "content": "等待设备事件…",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1771,7 +1791,8 @@
                       "fill": "#F2F4F3",
                       "content": "主页",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1806,7 +1827,8 @@
                       "fill": "#F2F4F3",
                       "content": "设备",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1877,7 +1899,8 @@
                       "fill": "#F2F4F3",
                       "content": "设置",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -2046,7 +2069,8 @@
                           "fill": "#8B908E",
                           "content": "完整运行日志 · 本机持久化",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -2121,7 +2145,8 @@
                   "fill": "#6D7370",
                   "content": "搜索消息、模块或 Trace ID",
                   "fontFamily": "Inter",
-                  "fontSize": 12
+                  "fontSize": 12,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -2306,7 +2331,8 @@
                       "fill": "#C7CECB",
                       "content": "Runtime initialized · CoreConnect 2.0.76",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2373,7 +2399,8 @@
                       "fill": "#C7CECB",
                       "content": "preferredDevice = 48:2A:E3:••:••:91",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2440,7 +2467,8 @@
                       "fill": "#C7CECB",
                       "content": "BLE connected · RayNeo iO-6904",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2507,7 +2535,8 @@
                       "fill": "#C7CECB",
                       "content": "business=13 · AssistantMsg · 42 bytes",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2574,7 +2603,8 @@
                       "fill": "#C7CECB",
                       "content": "messageReceived · ack=true · customId=8f2a",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2641,7 +2671,8 @@
                       "fill": "#C7CECB",
                       "content": "Paseo heartbeat latency 824 ms",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2708,7 +2739,8 @@
                       "fill": "#C7CECB",
                       "content": "WebSocket closed · reconnect scheduled",
                       "fontFamily": "JetBrains Mono",
-                      "fontSize": 11
+                      "fontSize": 11,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -2999,7 +3031,8 @@
                       "fill": "#8B908E",
                       "content": "管理与切换 daemon 连接",
                       "fontFamily": "Inter",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3061,7 +3094,8 @@
                   "fill": "#A5B7B1",
                   "content": "密码由 AndroidKeyStore 加密保存",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -3142,7 +3176,8 @@
                               "fill": "#8B908E",
                               "content": "ws://HOST_LAN_IP:6767/ws",
                               "fontFamily": "JetBrains Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3303,7 +3338,8 @@
                               "fill": "#8B908E",
                               "content": "wss://paseo.home.example/ws",
                               "fontFamily": "JetBrains Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3364,7 +3400,8 @@
                       "fill": "#6E7471",
                       "content": "上次连接 2 天前",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -3447,7 +3484,8 @@
                               "fill": "#8B908E",
                               "content": "wss://paseo-staging.vpn/ws",
                               "fontFamily": "JetBrains Mono",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3508,7 +3546,8 @@
                       "fill": "#6E7471",
                       "content": "上次连接 2 天前",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -3528,7 +3567,8 @@
                   "fill": "#626866",
                   "content": "长按拖动排序 · 点击查看详情",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 }
               ]
             }
@@ -3590,7 +3630,8 @@
                       "fill": "#F2F4F3",
                       "content": "主页",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3625,7 +3666,8 @@
                       "fill": "#F2F4F3",
                       "content": "设备",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3660,7 +3702,8 @@
                       "fill": "#F2F4F3",
                       "content": "调试",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -3865,7 +3908,8 @@
                           "fill": "#8B908E",
                           "content": "Paseo daemon",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -4014,7 +4058,8 @@
                       "fill": "#96A39F",
                       "content": "最后握手 23:43:58",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -4023,7 +4068,8 @@
                       "fill": "#96A39F",
                       "content": "自动重连 已开启",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -4083,7 +4129,8 @@
                       "fill": "#8B908E",
                       "content": "WebSocket 地址",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -4164,7 +4211,8 @@
                       "fill": "#8B908E",
                       "content": "访问密码",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -4245,7 +4293,8 @@
                       "fill": "#8B908E",
                       "content": "Client ID",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -4326,7 +4375,8 @@
                       "fill": "#8B908E",
                       "content": "使用范围",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -4616,7 +4666,8 @@
                           "fill": "#8B908E",
                           "content": "连接一个新的 daemon",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -4706,7 +4757,8 @@
                   "fill": "#050606",
                   "content": " ",
                   "fontFamily": "Inter",
-                  "fontSize": 1
+                  "fontSize": 1,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -4782,7 +4834,8 @@
                   "fill": "#676D6A",
                   "content": "仅支持 ws:// 或 wss://，默认路径 /ws",
                   "fontFamily": "Inter",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -4862,7 +4915,8 @@
                   "fill": "#676D6A",
                   "content": "可选 · 留空表示 daemon 未启用密码",
                   "fontFamily": "Inter",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -4923,7 +4977,8 @@
                           "fill": "#8B908E",
                           "content": "指数退避，最长 60 秒",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -4990,7 +5045,8 @@
                           "fill": "#8B908E",
                           "content": "避免无密码 daemon 暴露公网",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -5070,7 +5126,8 @@
                   "fill": "#6D7370",
                   "content": "密码将使用 AndroidKeyStore 加密，不进入日志和备份",
                   "fontFamily": "Inter",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             }
@@ -5206,7 +5263,8 @@
                       "fill": "#8B908E",
                       "content": "管理模型端点、模型与用途",
                       "fontFamily": "Inter",
-                      "fontSize": 12
+                      "fontSize": 12,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -5268,7 +5326,8 @@
                   "fill": "#A8AFAC",
                   "content": "ASR 密钥与普通对话模型独立配置",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -5349,7 +5408,8 @@
                               "fill": "#8B908E",
                               "content": "MiniMax · MiniMax-M2.5-highspeed",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -5509,7 +5569,8 @@
                               "fill": "#8B908E",
                               "content": "DeepSeek · deepseek-chat",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -5669,7 +5730,8 @@
                               "fill": "#8B908E",
                               "content": "OpenAI-compatible · gpt-5.5-proxy",
                               "fontFamily": "Inter",
-                              "fontSize": 10
+                              "fontSize": 10,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -5809,7 +5871,8 @@
                           "fill": "#8B908E",
                           "content": "普通问答、意图识别、失败回退",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -5886,7 +5949,8 @@
                       "fill": "#F2F4F3",
                       "content": "主页",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -5921,7 +5985,8 @@
                       "fill": "#F2F4F3",
                       "content": "设备",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -5956,7 +6021,8 @@
                       "fill": "#F2F4F3",
                       "content": "调试",
                       "fontFamily": "Inter",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -6161,7 +6227,8 @@
                           "fill": "#8B908E",
                           "content": "修改提供方与调用参数",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -6552,7 +6619,8 @@
                           "fill": "#8B908E",
                           "content": "非代码任务直接回答",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -6619,7 +6687,8 @@
                           "fill": "#8B908E",
                           "content": "眼镜命令与任务路由",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -6686,7 +6755,8 @@
                           "fill": "#8B908E",
                           "content": "当前主源不可用时自动切换",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -6747,7 +6817,8 @@
                   "fill": "#A8AFAC",
                   "content": "语音识别仍使用独立的 MiniMax ASR Key",
                   "fontFamily": "Inter",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -6993,7 +7064,8 @@
                           "fill": "#8B908E",
                           "content": "快速查看所有会话运行状态",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -7062,7 +7134,8 @@
                       "fill": "#8B908E",
                       "content": "运行中",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -7095,7 +7168,8 @@
                       "fill": "#8B908E",
                       "content": "等待",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -7128,7 +7202,8 @@
                       "fill": "#8B908E",
                       "content": "已完成",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -7161,7 +7236,8 @@
                       "fill": "#8B908E",
                       "content": "失败",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -7343,7 +7419,8 @@
                               "fill": "#8B908E",
                               "content": "main · /Unofficial-IO-Android",
                               "fontFamily": "Inter",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -7392,7 +7469,8 @@
                   "fill": "#B7BEBA",
                   "content": "正在运行测试并检查设备连接状态",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -7428,7 +7506,8 @@
                       "fill": "#6E7471",
                       "content": "办公室 Mac · Codex",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -7519,7 +7598,8 @@
                               "fill": "#8B908E",
                               "content": "feature/paseo-sources · /Turbo-IO",
                               "fontFamily": "Inter",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -7568,7 +7648,8 @@
                   "fill": "#B7BEBA",
                   "content": "需要批准读取本机网络配置",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -7604,7 +7685,8 @@
                       "fill": "#6E7471",
                       "content": "办公室 Mac · Codex",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -7695,7 +7777,8 @@
                               "fill": "#8B908E",
                               "content": "main · /Unofficial-IO-Android",
                               "fontFamily": "Inter",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -7744,7 +7827,8 @@
                   "fill": "#B7BEBA",
                   "content": "已生成方案与风险清单",
                   "fontFamily": "Inter",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -7780,7 +7864,8 @@
                       "fill": "#6E7471",
                       "content": "办公室 Mac · Codex",
                       "fontFamily": "Inter",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -7980,7 +8065,8 @@
                           "fill": "#8B908E",
                           "content": "选择提供方并填写调用参数",
                           "fontFamily": "Inter",
-                          "fontSize": 11
+                          "fontSize": 11,
+                          "fontWeight": "normal"
                         }
                       ]
                     }
@@ -8371,7 +8457,8 @@
                           "fill": "#8B908E",
                           "content": "非代码任务直接回答",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -8438,7 +8525,8 @@
                           "fill": "#8B908E",
                           "content": "眼镜命令与任务路由",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -8505,7 +8593,8 @@
                           "fill": "#8B908E",
                           "content": "当前主源不可用时自动切换",
                           "fontFamily": "Inter",
-                          "fontSize": 9
+                          "fontSize": 9,
+                          "fontWeight": "normal"
                         }
                       ]
                     },
@@ -8566,7 +8655,8 @@
                   "fill": "#A8AFAC",
                   "content": "语音识别仍使用独立的 MiniMax ASR Key",
                   "fontFamily": "Inter",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -8646,6 +8736,4688 @@
                       "fontWeight": "650"
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mqers",
+      "x": 0,
+      "y": 3000,
+      "name": "MVP · 首页",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "LibXm",
+          "name": "首页状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "$bg",
+          "padding": [
+            18,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "R0QtSV",
+              "name": "时间",
+              "fill": "$text",
+              "content": "23:44",
+              "fontFamily": "$font",
+              "fontSize": 12,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "W9ql8C",
+              "name": "系统状态",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "nil8g",
+                  "name": "网络",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "signal_cellular_alt",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                },
+                {
+                  "type": "icon",
+                  "id": "PusnA",
+                  "name": "电池",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery_full",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QONMg",
+          "name": "首页内容",
+          "width": "fill_container",
+          "height": 786,
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 14,
+          "padding": [
+            18,
+            18,
+            12,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "NPU7n",
+              "name": "首页标题区",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tYBn5",
+                  "name": "标题文字",
+                  "layout": "vertical",
+                  "gap": 3,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Yq3Gq",
+                      "name": "产品名",
+                      "fill": "$text",
+                      "content": "TurboIO",
+                      "fontFamily": "$font",
+                      "fontSize": 28,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "iT5nz",
+                      "name": "产品说明",
+                      "fill": "$muted",
+                      "content": "RayNeo 智能眼镜控制台",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CYjG5",
+                  "name": "运行时入口",
+                  "width": 38,
+                  "height": 38,
+                  "fill": "$surface2",
+                  "cornerRadius": 19,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "J6TED",
+                      "name": "运行时图标",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "eyeglasses",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YEZqW",
+              "name": "眼镜模式主卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Hqc0L",
+                  "name": "模式标题行",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "HGyWj",
+                      "name": "模式标题",
+                      "gap": 9,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "MBN7p",
+                          "name": "语音图标",
+                          "width": 22,
+                          "height": 22,
+                          "icon": "graphic_eq",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Q0R1Fg",
+                          "name": "模式名称",
+                          "fill": "$text",
+                          "content": "TurboIO 接管模式",
+                          "fontFamily": "$font",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lNYk9",
+                      "name": "关闭状态",
+                      "fill": "$surface2",
+                      "cornerRadius": 14,
+                      "padding": [
+                        5,
+                        9
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "IBZ9z",
+                          "name": "关闭状态文字",
+                          "fill": "$muted",
+                          "content": "已关闭",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "xKEJC",
+                  "name": "模式说明",
+                  "fill": "$muted",
+                  "content": "关闭时，眼镜普通语音仍由官方助手处理。",
+                  "fontFamily": "$font",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "lFA6u",
+                  "name": "开启模式按钮",
+                  "width": "fill_container",
+                  "height": 46,
+                  "fill": "$accent",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "zwNgc",
+                      "name": "开启图标",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "power_settings_new",
+                      "library": "Material Symbols Rounded",
+                      "fill": "#07110E"
+                    },
+                    {
+                      "type": "text",
+                      "id": "n0eccm",
+                      "name": "开启模式文字",
+                      "fill": "#07110E",
+                      "content": "开启接管模式",
+                      "fontFamily": "$font",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hFoTn",
+              "name": "运行摘要",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t7qkm",
+                  "name": "眼镜摘要",
+                  "width": "fill_container",
+                  "height": 86,
+                  "fill": "$surface",
+                  "cornerRadius": 13,
+                  "layout": "vertical",
+                  "gap": 7,
+                  "padding": 12,
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "ntUTz",
+                      "name": "眼镜摘要图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "eyeglasses",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nDaHB",
+                      "name": "眼镜摘要标签",
+                      "fill": "$muted",
+                      "content": "眼镜",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w5j2e",
+                      "name": "眼镜摘要值",
+                      "fill": "$text",
+                      "content": "已连接",
+                      "fontFamily": "$font",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "o8jkJ",
+                  "name": "Paseo摘要",
+                  "width": "fill_container",
+                  "height": 86,
+                  "fill": "$surface",
+                  "cornerRadius": 13,
+                  "layout": "vertical",
+                  "gap": 7,
+                  "padding": 12,
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "qHSwK",
+                      "name": "Paseo摘要图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "link",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "LDkEL",
+                      "name": "Paseo摘要标签",
+                      "fill": "$muted",
+                      "content": "Paseo",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CA8qL",
+                      "name": "Paseo摘要值",
+                      "fill": "$text",
+                      "content": "未连接",
+                      "fontFamily": "$font",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tufKZ",
+                  "name": "语音运行时摘要",
+                  "width": "fill_container",
+                  "height": 86,
+                  "fill": "$surface",
+                  "cornerRadius": 13,
+                  "layout": "vertical",
+                  "gap": 7,
+                  "padding": 12,
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "mL63b",
+                      "name": "语音运行时摘要图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "memory",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S91hSM",
+                      "name": "语音运行时摘要标签",
+                      "fill": "$muted",
+                      "content": "语音运行时",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "y2Au9b",
+                      "name": "语音运行时摘要值",
+                      "fill": "$text",
+                      "content": "就绪",
+                      "fontFamily": "$font",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "weTOC",
+              "name": "最近识别卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "aoz0C",
+                  "name": "最近识别标题行",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XIgoB",
+                      "name": "最近识别标题",
+                      "fill": "$muted",
+                      "content": "最近识别",
+                      "fontFamily": "$font",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kdf5a",
+                      "name": "等待状态",
+                      "fill": "$accentSoft",
+                      "cornerRadius": 14,
+                      "padding": [
+                        5,
+                        9
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b0bnk",
+                          "name": "等待状态文字",
+                          "fill": "$accent",
+                          "content": "等待语音",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "oSmGS",
+                  "name": "最近识别正文",
+                  "fill": "$text",
+                  "content": "尚无识别内容",
+                  "fontFamily": "$font",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "me0QD",
+              "name": "快捷操作",
+              "width": "fill_container",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "a4arNO",
+                  "name": "打开官方 App按钮",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "$surface",
+                  "cornerRadius": 12,
+                  "gap": 7,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "POlCe",
+                      "name": "打开官方 App图标",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "open_in_new",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S4ydD",
+                      "name": "打开官方 App文字",
+                      "fill": "$text",
+                      "content": "打开官方 App",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GDzWP",
+                  "name": "结束当前这句话按钮",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "$surface",
+                  "cornerRadius": 12,
+                  "gap": 7,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "bkVoI",
+                      "name": "结束当前这句话图标",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "stop_circle",
+                      "library": "Material Symbols Rounded",
+                      "fill": "#606563"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eElQ0",
+                      "name": "结束当前这句话文字",
+                      "fill": "#606563",
+                      "content": "结束当前这句话",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yJQYT",
+          "name": "底部导航",
+          "width": "fill_container",
+          "height": 82,
+          "fill": "#111313",
+          "padding": [
+            10,
+            18
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Fxsmu",
+              "name": "首页导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "$accentSoft",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "nAuyJ",
+                  "name": "首页图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "home",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "Oo5kq",
+                  "name": "首页标签",
+                  "fill": "$accent",
+                  "content": "首页",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "f8CQj",
+              "name": "调试导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "O8Sth",
+                  "name": "调试图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "terminal",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "VEKF9",
+                  "name": "调试标签",
+                  "fill": "$muted",
+                  "content": "调试",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wyca9",
+              "name": "日志导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "LOPi1",
+                  "name": "日志图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "receipt_long",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "THpXu",
+                  "name": "日志标签",
+                  "fill": "$muted",
+                  "content": "日志",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WeKU3",
+              "name": "设置导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "amWh8",
+                  "name": "设置图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "yLYXr",
+                  "name": "设置标签",
+                  "fill": "$muted",
+                  "content": "设置",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "njoxt",
+      "x": 500,
+      "y": 3000,
+      "name": "MVP · 调试",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "wJib1",
+          "name": "调试状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "$bg",
+          "padding": [
+            18,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "zTUuj",
+              "name": "时间",
+              "fill": "$text",
+              "content": "23:44",
+              "fontFamily": "$font",
+              "fontSize": 12,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "HDJIN",
+              "name": "系统状态",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "OQSKw",
+                  "name": "网络",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "signal_cellular_alt",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                },
+                {
+                  "type": "icon",
+                  "id": "yCbfW",
+                  "name": "电池",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery_full",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "bwhYi",
+          "name": "调试内容",
+          "width": "fill_container",
+          "height": 786,
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 13,
+          "padding": [
+            16,
+            18,
+            12,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "t6Vq3",
+              "name": "调试标题行",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "WMXIL",
+                  "name": "调试标题文字",
+                  "layout": "vertical",
+                  "gap": 3,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lKWIe",
+                      "name": "调试标题",
+                      "fill": "$text",
+                      "content": "消息调试",
+                      "fontFamily": "$font",
+                      "fontSize": 26,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TDPPx",
+                      "name": "调试副标题",
+                      "fill": "$muted",
+                      "content": "向当前连接的眼镜发送测试消息",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fG5x2",
+                  "name": "连接状态",
+                  "fill": "$accentSoft",
+                  "cornerRadius": 14,
+                  "gap": 5,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "e0IQ7g",
+                      "name": "连接状态点",
+                      "fill": "$accent",
+                      "width": 6,
+                      "height": 6
+                    },
+                    {
+                      "type": "text",
+                      "id": "e2jMCN",
+                      "name": "连接状态文字",
+                      "fill": "$accent",
+                      "content": "已连接",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Lqqb7",
+              "name": "目标设备卡",
+              "width": "fill_container",
+              "height": 54,
+              "fill": "$surface",
+              "cornerRadius": 12,
+              "padding": [
+                0,
+                13
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VM8FN",
+                  "name": "目标设备信息",
+                  "gap": 9,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "mTzbi",
+                      "name": "眼镜图标",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "eyeglasses",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KAbzH",
+                      "name": "目标设备文字",
+                      "layout": "vertical",
+                      "gap": 2,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YdAkP",
+                          "name": "目标设备标签",
+                          "fill": "$muted",
+                          "content": "当前唯一连接设备",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yGst1",
+                          "name": "目标设备值",
+                          "fill": "$text",
+                          "content": "RayNeo · 自动识别",
+                          "fontFamily": "$font",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "icon",
+                  "id": "HUGpW",
+                  "name": "锁定设备",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "lock",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AiFPk",
+              "name": "Assistant 调试卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yEo7r",
+                  "name": "Assistant 标题行",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "HTYWm",
+                      "name": "Assistant 标题",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "C1JneJ",
+                          "name": "Assistant 图标",
+                          "width": 19,
+                          "height": 19,
+                          "icon": "mic",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "text",
+                          "id": "yb7SM",
+                          "name": "Assistant 标题文字",
+                          "fill": "$text",
+                          "content": "Assistant / ASR",
+                          "fontFamily": "$font",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "jEzKH",
+                      "name": "Assistant Business",
+                      "fill": "$muted",
+                      "content": "Business 13",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n0h8G3",
+                  "name": "Assistant 文本",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 7,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "W1rsNZ",
+                      "name": "Assistant 文本标签",
+                      "fill": "$muted",
+                      "content": "发送文本",
+                      "fontFamily": "$font",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "omXM3",
+                      "name": "Assistant 文本输入框",
+                      "width": "fill_container",
+                      "height": 82,
+                      "fill": "$surface2",
+                      "cornerRadius": 11,
+                      "padding": [
+                        0,
+                        13
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DLbaG",
+                          "name": "Assistant 文本值",
+                          "fill": "$muted",
+                          "content": "输入要显示到眼镜助手页的文字",
+                          "fontFamily": "$font",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KmgtA",
+                  "name": "Assistant 字数行",
+                  "width": "fill_container",
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H4bhFf",
+                      "name": "Assistant 字数",
+                      "fill": "$muted",
+                      "content": "0 / 500 bytes",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nre8s",
+                  "name": "发送 Assistant 按钮",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "$accent",
+                  "cornerRadius": 11,
+                  "gap": 7,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "TXezn",
+                      "name": "发送 Assistant 图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "send",
+                      "library": "Material Symbols Rounded",
+                      "fill": "#07110E"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BOTDa",
+                      "name": "发送 Assistant 文字",
+                      "fill": "#07110E",
+                      "content": "提交到发送链路",
+                      "fontFamily": "$font",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Y57vay",
+              "name": "原始消息卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 14,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "CkrWZ",
+                  "name": "原始消息标题行",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "kSPRR",
+                      "name": "原始消息图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "data_object",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cCrSP",
+                      "name": "原始消息标题",
+                      "fill": "$text",
+                      "content": "原始 Business 消息",
+                      "fontFamily": "$font",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nyW4k",
+                  "name": "原始消息字段行",
+                  "width": "fill_container",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "d4cHlE",
+                      "name": "Business ID 字段",
+                      "width": 100,
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qKHHB",
+                          "name": "Business ID 标签",
+                          "fill": "$muted",
+                          "content": "Business ID",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "NM7lh",
+                          "name": "Business ID 输入框",
+                          "width": "fill_container",
+                          "height": 42,
+                          "fill": "$surface2",
+                          "cornerRadius": 10,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "bXaJn",
+                              "name": "Business ID 值",
+                              "fill": "$text",
+                              "content": "13",
+                              "fontFamily": "$font",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "z6RdS",
+                      "name": "Payload 字段",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 7,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oFice",
+                          "name": "Payload 标签",
+                          "fill": "$muted",
+                          "content": "Hex payload",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "f8sY8n",
+                          "name": "Payload 输入框",
+                          "width": "fill_container",
+                          "height": 42,
+                          "fill": "$surface2",
+                          "cornerRadius": 10,
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "VxO1K",
+                              "name": "Payload 值",
+                              "fill": "$muted",
+                              "content": "例如 08011005",
+                              "fontFamily": "$font",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PgfnR",
+                  "name": "发送原始消息按钮",
+                  "width": "fill_container",
+                  "height": 42,
+                  "fill": "$surface2",
+                  "cornerRadius": 11,
+                  "gap": 7,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "kXt8e",
+                      "name": "发送原始消息图标",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "send",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$text"
+                    },
+                    {
+                      "type": "text",
+                      "id": "K5l6Q",
+                      "name": "发送原始消息文字",
+                      "fill": "$text",
+                      "content": "发送原始消息",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fLJ2t",
+              "name": "发送边界提示",
+              "width": "fill_container",
+              "fill": "#18231F",
+              "cornerRadius": 11,
+              "gap": 8,
+              "padding": 11,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "I5P0Qw",
+                  "name": "提示图标",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "info",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "oiBfd",
+                  "name": "提示文字",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "“已提交”只表示发送调用完成，不代表镜片已经显示。",
+                  "fontFamily": "$font",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "H4EVy",
+          "name": "底部导航",
+          "width": "fill_container",
+          "height": 82,
+          "fill": "#111313",
+          "padding": [
+            10,
+            18
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "sDQWu",
+              "name": "首页导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "SIpVV",
+                  "name": "首页图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "home",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "HXSMq",
+                  "name": "首页标签",
+                  "fill": "$muted",
+                  "content": "首页",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r8aFR9",
+              "name": "调试导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "$accentSoft",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "PGxLe",
+                  "name": "调试图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "terminal",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "CLxG2",
+                  "name": "调试标签",
+                  "fill": "$accent",
+                  "content": "调试",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wcSgg",
+              "name": "日志导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "C7bkf",
+                  "name": "日志图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "receipt_long",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "fB7ea",
+                  "name": "日志标签",
+                  "fill": "$muted",
+                  "content": "日志",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wLJbe",
+              "name": "设置导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "AqJHh",
+                  "name": "设置图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "otwtC",
+                  "name": "设置标签",
+                  "fill": "$muted",
+                  "content": "设置",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "d0Pt2I",
+      "x": 1000,
+      "y": 3000,
+      "name": "MVP · 日志",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NcISj",
+          "name": "日志状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "$bg",
+          "padding": [
+            18,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "v13rX",
+              "name": "时间",
+              "fill": "$text",
+              "content": "23:44",
+              "fontFamily": "$font",
+              "fontSize": 12,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Qgdge",
+              "name": "系统状态",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "S81oP3",
+                  "name": "网络",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "signal_cellular_alt",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                },
+                {
+                  "type": "icon",
+                  "id": "QH2Iy",
+                  "name": "电池",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery_full",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WARvi",
+          "name": "日志内容",
+          "width": "fill_container",
+          "height": 786,
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            18,
+            12,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "OPI8K",
+              "name": "日志标题行",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "IPhoS",
+                  "name": "日志标题文字",
+                  "layout": "vertical",
+                  "gap": 3,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bU1k9",
+                      "name": "日志标题",
+                      "fill": "$text",
+                      "content": "诊断日志",
+                      "fontFamily": "$font",
+                      "fontSize": 26,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pp0bQ",
+                      "name": "日志副标题",
+                      "fill": "$muted",
+                      "content": "本机持久化 · 不记录 Key 和语音正文",
+                      "fontFamily": "$font",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UqcvV",
+                  "name": "记录状态",
+                  "fill": "$accentSoft",
+                  "cornerRadius": 14,
+                  "gap": 5,
+                  "padding": [
+                    6,
+                    9
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "wHgiJ",
+                      "name": "记录状态点",
+                      "fill": "$accent",
+                      "width": 6,
+                      "height": 6
+                    },
+                    {
+                      "type": "text",
+                      "id": "s0RSt",
+                      "name": "记录状态文字",
+                      "fill": "$accent",
+                      "content": "记录中",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "A1oIit",
+              "name": "日志搜索框",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "$surface",
+              "cornerRadius": 12,
+              "gap": 9,
+              "padding": [
+                0,
+                13
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "eMpKP",
+                  "name": "搜索图标",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "search",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "KZQi5",
+                  "name": "搜索提示",
+                  "fill": "$muted",
+                  "content": "搜索事件或错误",
+                  "fontFamily": "$font",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aGmDk",
+              "name": "日志筛选",
+              "width": "fill_container",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GBBa5",
+                  "name": "全部筛选",
+                  "height": 30,
+                  "fill": "#4DB596",
+                  "cornerRadius": 15,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Hd5s5",
+                      "name": "全部筛选文字",
+                      "fill": "#07110E",
+                      "content": "全部",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "D4rFu",
+                  "name": "状态筛选",
+                  "height": 30,
+                  "fill": "$surface",
+                  "cornerRadius": 15,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mzXzi",
+                      "name": "状态筛选文字",
+                      "fill": "$muted",
+                      "content": "状态",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Plne7",
+                  "name": "发送筛选",
+                  "height": 30,
+                  "fill": "$surface",
+                  "cornerRadius": 15,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H9AdN",
+                      "name": "发送筛选文字",
+                      "fill": "$muted",
+                      "content": "发送",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "P2i88",
+                  "name": "错误筛选",
+                  "height": 30,
+                  "fill": "$surface",
+                  "cornerRadius": 15,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Nv03X",
+                      "name": "错误筛选文字",
+                      "fill": "$danger",
+                      "content": "错误",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qijnJ",
+              "name": "日志列表",
+              "width": "fill_container",
+              "height": 454,
+              "fill": "#111313",
+              "cornerRadius": 14,
+              "stroke": "$line",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "R21cPR",
+                  "name": "STATE 日志行",
+                  "width": "fill_container",
+                  "stroke": "#242827",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": [
+                    11,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oJ7fC",
+                      "name": "STATE 元信息",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cjGzh",
+                          "name": "STATE 时间",
+                          "fill": "$muted",
+                          "content": "23:44:18.021",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "G6Yx2X",
+                          "name": "STATE 类型",
+                          "fill": "$accent",
+                          "content": "STATE",
+                          "fontFamily": "$font",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "Oegvb",
+                      "name": "STATE 内容",
+                      "fill": "$text",
+                      "content": "眼镜模式已开启",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Rp4tQ",
+                  "name": "INFO 日志行",
+                  "width": "fill_container",
+                  "stroke": "#242827",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": [
+                    11,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "LIBKv",
+                      "name": "INFO 元信息",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "V7b1g",
+                          "name": "INFO 时间",
+                          "fill": "$muted",
+                          "content": "23:44:18.104",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C9HLcr",
+                          "name": "INFO 类型",
+                          "fill": "$muted",
+                          "content": "INFO",
+                          "fontFamily": "$font",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "O0Pd0",
+                      "name": "INFO 内容",
+                      "fill": "$text",
+                      "content": "语音运行时就绪",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a4clh",
+                  "name": "SEND 日志行",
+                  "width": "fill_container",
+                  "stroke": "#242827",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": [
+                    11,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eDL9O",
+                      "name": "SEND 元信息",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "l9Tzm",
+                          "name": "SEND 时间",
+                          "fill": "$muted",
+                          "content": "23:44:26.002",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "tidRD",
+                          "name": "SEND 类型",
+                          "fill": "#7CB7E8",
+                          "content": "SEND",
+                          "fontFamily": "$font",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "RJzH5",
+                      "name": "SEND 内容",
+                      "fill": "$text",
+                      "content": "business=13 · type=5 · 42 bytes",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NwWbM",
+                  "name": "EVENT 日志行",
+                  "width": "fill_container",
+                  "stroke": "#242827",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": [
+                    11,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Dve8q",
+                      "name": "EVENT 元信息",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "U7RAf0",
+                          "name": "EVENT 时间",
+                          "fill": "$muted",
+                          "content": "23:44:26.138",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ydXBg",
+                          "name": "EVENT 类型",
+                          "fill": "$accent",
+                          "content": "EVENT",
+                          "fontFamily": "$font",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "A1dIF8",
+                      "name": "EVENT 内容",
+                      "fill": "$text",
+                      "content": "send_result · ok=true",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "v0sTTq",
+                  "name": "ERROR 日志行",
+                  "width": "fill_container",
+                  "stroke": "#242827",
+                  "strokeWidth": {
+                    "bottom": 1
+                  },
+                  "layout": "vertical",
+                  "gap": 5,
+                  "padding": [
+                    11,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "AZ7SN",
+                      "name": "ERROR 元信息",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wQGM4",
+                          "name": "ERROR 时间",
+                          "fill": "$muted",
+                          "content": "23:44:43.201",
+                          "fontFamily": "$font",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "R1Tgvf",
+                          "name": "ERROR 类型",
+                          "fill": "$danger",
+                          "content": "ERROR",
+                          "fontFamily": "$font",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "R7NaY",
+                      "name": "ERROR 内容",
+                      "fill": "#F2B1B1",
+                      "content": "Paseo 连接已断开",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eBM8x",
+              "name": "日志操作栏",
+              "width": "fill_container",
+              "height": 46,
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jI03x",
+                  "name": "暂停日志按钮",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 11,
+                  "gap": 5,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "gAFRn",
+                      "name": "暂停图标",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "pause",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PfbSs",
+                      "name": "暂停文字",
+                      "fill": "$text",
+                      "content": "暂停",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mSYL6",
+                  "name": "到底部日志按钮",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 11,
+                  "gap": 5,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "iUxKk",
+                      "name": "到底部图标",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "vertical_align_bottom",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "HPBEo",
+                      "name": "到底部文字",
+                      "fill": "$text",
+                      "content": "到底部",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wS8I2",
+                  "name": "复制日志按钮",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 11,
+                  "gap": 5,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "G9rATS",
+                      "name": "复制图标",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "content_copy",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "N4CsL",
+                      "name": "复制文字",
+                      "fill": "$text",
+                      "content": "复制",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KUN3G",
+                  "name": "清空日志按钮",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": 11,
+                  "gap": 5,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "g8Crf7",
+                      "name": "清空图标",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "delete",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$danger"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hadVU",
+                      "name": "清空文字",
+                      "fill": "$danger",
+                      "content": "清空",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HcaOH",
+          "name": "底部导航",
+          "width": "fill_container",
+          "height": 82,
+          "fill": "#111313",
+          "padding": [
+            10,
+            18
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "jzgwk",
+              "name": "首页导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "RUq4t",
+                  "name": "首页图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "home",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "PdFtx",
+                  "name": "首页标签",
+                  "fill": "$muted",
+                  "content": "首页",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "baHRI",
+              "name": "调试导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "WtWH1",
+                  "name": "调试图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "terminal",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "d2aBTV",
+                  "name": "调试标签",
+                  "fill": "$muted",
+                  "content": "调试",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w2xOAP",
+              "name": "日志导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "$accentSoft",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "X8CMO",
+                  "name": "日志图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "receipt_long",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "wyXVw",
+                  "name": "日志标签",
+                  "fill": "$accent",
+                  "content": "日志",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eo0Bx",
+              "name": "设置导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "eS0pj",
+                  "name": "设置图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "u15nR",
+                  "name": "设置标签",
+                  "fill": "$muted",
+                  "content": "设置",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "meiXg",
+      "x": 1500,
+      "y": 3000,
+      "name": "MVP · 设置",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "$bg",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "X4u1C",
+          "name": "设置状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "fill": "$bg",
+          "padding": [
+            18,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "MVLLM",
+              "name": "时间",
+              "fill": "$text",
+              "content": "23:44",
+              "fontFamily": "$font",
+              "fontSize": 12,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Fcg1l",
+              "name": "系统状态",
+              "gap": 6,
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "MPBat",
+                  "name": "网络",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "signal_cellular_alt",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                },
+                {
+                  "type": "icon",
+                  "id": "NzdUJ",
+                  "name": "电池",
+                  "width": 16,
+                  "height": 16,
+                  "icon": "battery_full",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HbqGu",
+          "name": "设置内容",
+          "width": "fill_container",
+          "height": 786,
+          "fill": "$bg",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            18,
+            10,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "WTvmo",
+              "name": "设置标题区",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "RvX6r",
+                  "name": "设置标题",
+                  "fill": "$text",
+                  "content": "设置",
+                  "fontFamily": "$font",
+                  "fontSize": 26,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "nBhC8",
+                  "name": "设置副标题",
+                  "fill": "$muted",
+                  "content": "只保留当前版本真正生效的配置",
+                  "fontFamily": "$font",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YccdZ",
+              "name": "MiniMax 配置卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 9,
+              "padding": 13,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kH1sM",
+                  "name": "MiniMax 标题行",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JfkyE",
+                      "name": "MiniMax 标题",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "F4uLOr",
+                          "name": "MiniMax 图标",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "key",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "text",
+                          "id": "O49FH",
+                          "name": "MiniMax 标题文字",
+                          "fill": "$text",
+                          "content": "MiniMax API Key",
+                          "fontFamily": "$font",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ljJcW",
+                      "name": "MiniMax 保存状态",
+                      "fill": "$accent",
+                      "content": "已保存",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "p385Z",
+                  "name": "MiniMax Key",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "P7bQ2O",
+                      "name": "MiniMax Key标签",
+                      "fill": "$muted",
+                      "content": "API Key（留空不会覆盖现有值）",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IpTDH",
+                      "name": "MiniMax Key输入框",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$surface2",
+                      "cornerRadius": 10,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "F1qdVq",
+                          "name": "MiniMax Key值",
+                          "fill": "$text",
+                          "content": "••••••••••••••••",
+                          "fontFamily": "$font",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "VGlva",
+                          "name": "MiniMax Key可见性",
+                          "width": 16,
+                          "height": 16,
+                          "icon": "visibility_off",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$muted"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rW0b7",
+                  "name": "MiniMax 操作",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OjQWq",
+                      "name": "保存 MiniMax",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$accent",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NfKgO",
+                          "name": "保存 MiniMax文字",
+                          "fill": "#07110E",
+                          "content": "保存到本机",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zqThH",
+                      "name": "删除 MiniMax",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$surface2",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kJjJC",
+                          "name": "删除 MiniMax文字",
+                          "fill": "$danger",
+                          "content": "删除 Key",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "tOuB8",
+                  "name": "MiniMax 用途说明",
+                  "fill": "$muted",
+                  "content": "用于 ASR、意图识别和普通问答；模式开启时不可编辑。",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wd6RZ",
+              "name": "Paseo 配置卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "layout": "vertical",
+              "gap": 9,
+              "padding": 13,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g8c7v",
+                  "name": "Paseo 标题行",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "V658xY",
+                      "name": "Paseo 标题",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "ZqIkA",
+                          "name": "Paseo 图标",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "link",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$accent"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C6vUfq",
+                          "name": "Paseo 标题文字",
+                          "fill": "$text",
+                          "content": "Paseo 源",
+                          "fontFamily": "$font",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qFMrK",
+                      "name": "Paseo 状态",
+                      "fill": "$muted",
+                      "content": "2 个源",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "K8kbN",
+                  "name": "Paseo 地址",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "z4lnN9",
+                      "name": "Paseo 地址标签",
+                      "fill": "$muted",
+                      "content": "当前使用",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Cd0ul",
+                      "name": "Paseo 地址输入框",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$surface2",
+                      "cornerRadius": 10,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "C8ees",
+                          "name": "Paseo 地址值",
+                          "fill": "$text",
+                          "content": "公司电脑 · ws://10.0.0.8:6767/ws",
+                          "fontFamily": "$font",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xDl9O",
+                  "name": "Paseo 密码",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EvfBP",
+                      "name": "Paseo 密码标签",
+                      "fill": "$muted",
+                      "content": "连接状态",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "c2Ss9",
+                      "name": "Paseo 密码输入框",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$surface2",
+                      "cornerRadius": 10,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "v4nEf",
+                          "name": "Paseo 密码值",
+                          "fill": "$text",
+                          "content": "在线 · 42 ms",
+                          "fontFamily": "$font",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "XsQET",
+                          "x": 330,
+                          "y": 12,
+                          "name": "Paseo 密码可见性",
+                          "enabled": false,
+                          "width": 16,
+                          "height": 16,
+                          "icon": "visibility_off",
+                          "library": "Material Symbols Rounded",
+                          "fill": "$muted"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d7c3W",
+                  "name": "Paseo 操作",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "J3aVxl",
+                      "name": "测试 Paseo",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$surface2",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Iwy57",
+                          "name": "测试 Paseo文字",
+                          "fill": "$text",
+                          "content": "测试当前源",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZeuKJ",
+                      "name": "保存 Paseo",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "$accent",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "AzEf3",
+                          "name": "保存 Paseo文字",
+                          "fill": "#07110E",
+                          "content": "管理源",
+                          "fontFamily": "$font",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QNpgY",
+              "name": "高德导航配置卡",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": 14,
+              "gap": 11,
+              "padding": 13,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "HtFt7",
+                  "name": "高德图标容器",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "$accentSoft",
+                  "cornerRadius": 10,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "kzb1p",
+                      "name": "高德图标",
+                      "width": 19,
+                      "height": 19,
+                      "icon": "navigation",
+                      "library": "Material Symbols Rounded",
+                      "fill": "$accent"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "q5Xf6",
+                  "name": "高德文字",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 3,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZsgyI",
+                      "name": "高德标题",
+                      "fill": "$text",
+                      "content": "高德导航提示",
+                      "fontFamily": "$font",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZQJeL",
+                      "name": "高德说明",
+                      "fill": "$muted",
+                      "content": "转发标准导航通知 · 需要通知使用权",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rrj2Z",
+                  "name": "高德开关",
+                  "width": 44,
+                  "height": 25,
+                  "fill": "$surface2",
+                  "cornerRadius": 13,
+                  "padding": 3,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "D1ehW",
+                      "name": "高德开关圆点",
+                      "fill": "$muted",
+                      "width": 19,
+                      "height": 19
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Zave0",
+              "name": "通知权限按钮",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "$surface",
+              "cornerRadius": 11,
+              "gap": 7,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "WXg4V",
+                  "name": "通知权限图标",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "notifications",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "dbmOh",
+                  "name": "通知权限文字",
+                  "fill": "$text",
+                  "content": "打开系统通知使用权设置",
+                  "fontFamily": "$font",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "A6PkH",
+          "name": "底部导航",
+          "width": "fill_container",
+          "height": 82,
+          "fill": "#111313",
+          "padding": [
+            10,
+            18
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "P2IHaP",
+              "name": "首页导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "HOPjr",
+                  "name": "首页图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "home",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "M43gU",
+                  "name": "首页标签",
+                  "fill": "$muted",
+                  "content": "首页",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "WKVEI",
+              "name": "调试导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hlzBq",
+                  "name": "调试图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "terminal",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "TGQkh",
+                  "name": "调试标签",
+                  "fill": "$muted",
+                  "content": "调试",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Re8Ss",
+              "name": "日志导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "#111313",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "LnvJJ",
+                  "name": "日志图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "receipt_long",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$muted"
+                },
+                {
+                  "type": "text",
+                  "id": "i23rQ3",
+                  "name": "日志标签",
+                  "fill": "$muted",
+                  "content": "日志",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jkzkQ",
+              "name": "设置导航项",
+              "width": 72,
+              "height": 56,
+              "fill": "$accentSoft",
+              "cornerRadius": 20,
+              "layout": "vertical",
+              "gap": 3,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hvNJF",
+                  "name": "设置图标",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "settings",
+                  "library": "Material Symbols Rounded",
+                  "fill": "$accent"
+                },
+                {
+                  "type": "text",
+                  "id": "ub2gW",
+                  "name": "设置标签",
+                  "fill": "$accent",
+                  "content": "设置",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "eaDJz",
+      "x": 0,
+      "y": 4000,
+      "name": "MVP · Paseo 源",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "#050606",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "CaV71",
+          "name": "Paseo 列表 状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "padding": [
+            14,
+            22,
+            8,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "sHVyW",
+              "name": "Paseo 列表 时间",
+              "fill": "#F2F4F3",
+              "content": "23:44",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "WuXtS",
+              "name": "Paseo 列表 系统状态",
+              "gap": 7,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "brs2A",
+                  "name": "Paseo 列表 信号",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                },
+                {
+                  "type": "icon",
+                  "id": "KYNby",
+                  "name": "Paseo 列表 WiFi",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                },
+                {
+                  "type": "icon",
+                  "id": "jd4uq",
+                  "name": "Paseo 列表 电量",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zvXJA",
+          "name": "Paseo 列表内容",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            8,
+            18,
+            14,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "t16gV",
+              "name": "Paseo 列表标题行",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "m0N2g",
+                  "name": "Paseo 列表标题文字",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "akUBZ",
+                      "name": "Paseo 列表标题",
+                      "fill": "#F2F4F3",
+                      "content": "Paseo 源",
+                      "fontFamily": "Inter",
+                      "fontSize": 30,
+                      "fontWeight": "650"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T3EcF",
+                      "name": "Paseo 列表副标题",
+                      "fill": "#8B908E",
+                      "content": "点击卡片即可切换 daemon 连接",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "AB1Yk",
+                  "name": "新建 Paseo 按钮",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#4DB596",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "Or5gu",
+                      "name": "新建 Paseo 图标",
+                      "width": 22,
+                      "height": 22,
+                      "icon": "plus",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#06251C"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EQHZI",
+              "name": "Paseo 列表提示",
+              "width": "fill_container",
+              "fill": "#101C19",
+              "cornerRadius": 14,
+              "gap": 9,
+              "padding": [
+                11,
+                13
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "dqJnF",
+                  "name": "Paseo 安全提示图标",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "shield-check",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#4DB596"
+                },
+                {
+                  "type": "text",
+                  "id": "Nm8zc",
+                  "name": "Paseo 安全提示",
+                  "fill": "#A5B7B1",
+                  "content": "密码由 AndroidKeyStore 加密保存",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HY50G",
+              "name": "Paseo 源 办公室 Mac",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#16372F",
+              "cornerRadius": 22,
+              "stroke": "#2B6B58",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JMDWS",
+                  "name": "办公室 Mac 顶部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "LmOru",
+                      "name": "办公室 Mac 名称组",
+                      "gap": 11,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "g0vz1A",
+                          "name": "办公室 Mac 图标底",
+                          "width": 38,
+                          "height": 38,
+                          "fill": "#244B40",
+                          "cornerRadius": 19,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "zKHuS",
+                              "name": "办公室 Mac 图标",
+                              "width": 20,
+                              "height": 20,
+                              "icon": "server",
+                              "library": "lucide",
+                              "weight": 500,
+                              "fill": "#4DB596"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "a4IIGC",
+                          "name": "办公室 Mac 文本",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nmsIw",
+                              "name": "办公室 Mac 名称",
+                              "fill": "#F2F4F3",
+                              "content": "公司电脑",
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "qtFHv",
+                              "name": "办公室 Mac 地址",
+                              "fill": "#8B908E",
+                              "content": "ws://10.0.0.8:6767/ws",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "aX5TE",
+                      "name": "办公室 Mac 更多",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "more-horizontal",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fLVBW",
+                  "name": "办公室 Mac 底部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ijoVG",
+                      "name": "办公室 Mac 状态",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "SzXII",
+                          "name": "办公室 Mac 状态点",
+                          "fill": "#4DB596",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "text",
+                          "id": "w7Xcb",
+                          "name": "办公室 Mac 状态文字",
+                          "fill": "#4DB596",
+                          "content": "在线 · 42 ms",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "evPfR",
+                      "name": "办公室 Mac 当前标签",
+                      "height": 24,
+                      "fill": "#4DB596",
+                      "cornerRadius": 12,
+                      "padding": [
+                        0,
+                        9
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ps0DA",
+                          "name": "办公室 Mac 当前文字",
+                          "fill": "#06251C",
+                          "content": "当前使用",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EKu8i",
+              "name": "Paseo 源 家庭服务器",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#1C1E1E",
+              "cornerRadius": 22,
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "U63QG",
+                  "name": "家庭服务器 顶部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "X9dS6Q",
+                      "name": "家庭服务器 名称组",
+                      "gap": 11,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NjLXC",
+                          "name": "家庭服务器 图标底",
+                          "width": 38,
+                          "height": 38,
+                          "fill": "#282B2A",
+                          "cornerRadius": 19,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "jg9y6",
+                              "name": "家庭服务器 图标",
+                              "width": 20,
+                              "height": 20,
+                              "icon": "server",
+                              "library": "lucide",
+                              "weight": 500,
+                              "fill": "#F2F4F3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pWhxi",
+                          "name": "家庭服务器 文本",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YsRKn",
+                              "name": "家庭服务器 名称",
+                              "fill": "#F2F4F3",
+                              "content": "家里电脑",
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YRXYA",
+                              "name": "家庭服务器 地址",
+                              "fill": "#8B908E",
+                              "content": "ws://192.168.1.12:6767/ws",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "NDgPZ",
+                      "name": "家庭服务器 更多",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "more-horizontal",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YTQk7",
+                  "name": "家庭服务器 底部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O6Eu6",
+                      "name": "家庭服务器 状态",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "GC7rP",
+                          "name": "家庭服务器 状态点",
+                          "fill": "#E57272",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "text",
+                          "id": "M9Ho90",
+                          "name": "家庭服务器 状态文字",
+                          "fill": "#E57272",
+                          "content": "离线",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "STrqr",
+                      "name": "家庭服务器 最近连接",
+                      "fill": "#6E7471",
+                      "content": "上次连接 2 天前",
+                      "fontFamily": "Inter",
+                      "fontSize": 9,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GbsBF",
+              "name": "Paseo 源 测试环境",
+              "width": "fill_container",
+              "height": 132,
+              "fill": "#1C1E1E",
+              "cornerRadius": 22,
+              "stroke": "#00000000",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "u0Kgqt",
+                  "name": "测试环境 顶部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "W6jtRi",
+                      "name": "测试环境 名称组",
+                      "gap": 11,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "g1Xv4W",
+                          "name": "测试环境 图标底",
+                          "width": 38,
+                          "height": 38,
+                          "fill": "#282B2A",
+                          "cornerRadius": 19,
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon",
+                              "id": "zkaur",
+                              "name": "测试环境 图标",
+                              "width": 20,
+                              "height": 20,
+                              "icon": "server",
+                              "library": "lucide",
+                              "weight": 500,
+                              "fill": "#F2F4F3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mNyPC",
+                          "name": "测试环境 文本",
+                          "layout": "vertical",
+                          "gap": 3,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "cITkM",
+                              "name": "测试环境 名称",
+                              "fill": "#F2F4F3",
+                              "content": "备用电脑",
+                              "fontFamily": "Inter",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "A3Vz6J",
+                              "name": "测试环境 地址",
+                              "fill": "#8B908E",
+                              "content": "wss://paseo.example.com/ws",
+                              "fontFamily": "JetBrains Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "K8OgLb",
+                      "name": "测试环境 更多",
+                      "width": 20,
+                      "height": 20,
+                      "icon": "more-horizontal",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Zrbgh",
+                  "name": "测试环境 底部",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "l2SKUZ",
+                      "name": "测试环境 状态",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "rUKKo",
+                          "name": "测试环境 状态点",
+                          "fill": "#E4B85C",
+                          "width": 7,
+                          "height": 7
+                        },
+                        {
+                          "type": "text",
+                          "id": "WWru2",
+                          "name": "测试环境 状态文字",
+                          "fill": "#E4B85C",
+                          "content": "可连接 · 128 ms",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "oXXDG",
+                      "name": "测试环境 最近连接",
+                      "fill": "#6E7471",
+                      "content": "上次连接 2 天前",
+                      "fontFamily": "Inter",
+                      "fontSize": 9,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "owbza",
+              "name": "Paseo 排序说明",
+              "width": "fill_container",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iLHFV",
+                  "name": "Paseo 排序文字",
+                  "fill": "#626866",
+                  "content": "点击卡片切换 · 长按拖动排序",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "wqZ44",
+          "name": "Paseo 列表导航",
+          "width": "fill_container",
+          "height": 82,
+          "padding": [
+            8,
+            16,
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "suXSB",
+              "name": "Paseo 列表导航胶囊",
+              "width": "fill_container",
+              "height": 62,
+              "fill": "#202221E6",
+              "cornerRadius": 31,
+              "gap": 4,
+              "padding": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "AMPM9",
+                  "name": "Paseo 导航 主页",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 25,
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "G8X8ei",
+                      "name": "Paseo 导航 主页图标",
+                      "width": 23,
+                      "height": 23,
+                      "icon": "home",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#F2F4F3"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lEMwf",
+                      "name": "Paseo 导航 主页标签",
+                      "fill": "#F2F4F3",
+                      "content": "主页",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XeUAz",
+                  "name": "Paseo 导航 设备",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 25,
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "OdleQ",
+                      "name": "Paseo 导航 设备图标",
+                      "width": 23,
+                      "height": 23,
+                      "icon": "glasses",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#F2F4F3"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ec0hp",
+                      "name": "Paseo 导航 设备标签",
+                      "fill": "#F2F4F3",
+                      "content": "调试",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ahb4g",
+                  "name": "Paseo 导航 调试",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 25,
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "ejQX8",
+                      "name": "Paseo 导航 调试图标",
+                      "width": 23,
+                      "height": 23,
+                      "icon": "terminal",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#F2F4F3"
+                    },
+                    {
+                      "type": "text",
+                      "id": "or0XT",
+                      "name": "Paseo 导航 调试标签",
+                      "fill": "#F2F4F3",
+                      "content": "日志",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "WsMPv",
+                  "name": "Paseo 导航 设置",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#303332",
+                  "cornerRadius": 25,
+                  "layout": "vertical",
+                  "gap": 2,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "QQPa3",
+                      "name": "Paseo 导航 设置图标",
+                      "width": 23,
+                      "height": 23,
+                      "icon": "settings",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#4DB596"
+                    },
+                    {
+                      "type": "text",
+                      "id": "grgBw",
+                      "name": "Paseo 导航 设置标签",
+                      "fill": "#4DB596",
+                      "content": "设置",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "tQ9Qv",
+      "x": 500,
+      "y": 4000,
+      "name": "MVP · Paseo 源编辑",
+      "clip": true,
+      "width": 420,
+      "height": 920,
+      "fill": "#050606",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "lp4aZ",
+          "name": "Paseo 编辑状态栏",
+          "width": "fill_container",
+          "height": 52,
+          "padding": [
+            14,
+            22,
+            8,
+            22
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "t46Si2",
+              "name": "Paseo 编辑时间",
+              "fill": "#F2F4F3",
+              "content": "23:44",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "yOosS",
+              "name": "Paseo 编辑系统状态",
+              "gap": 7,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "j5x3oX",
+                  "name": "Paseo 编辑信号",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "signal",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                },
+                {
+                  "type": "icon",
+                  "id": "cvONG",
+                  "name": "Paseo 编辑 WiFi",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "wifi",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                },
+                {
+                  "type": "icon",
+                  "id": "a7Muiv",
+                  "name": "Paseo 编辑电量",
+                  "width": 18,
+                  "height": 18,
+                  "icon": "battery-full",
+                  "library": "lucide",
+                  "weight": 500,
+                  "fill": "#F2F4F3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MeUIN",
+          "name": "Paseo 编辑内容",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            8,
+            18,
+            20,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "C02y9",
+              "name": "Paseo 编辑标题行",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FMjfC",
+                  "name": "Paseo 编辑标题左",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "kjlqt",
+                      "name": "Paseo 编辑关闭",
+                      "width": 38,
+                      "height": 38,
+                      "fill": "#1C1E1E",
+                      "cornerRadius": 19,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "DeDMO",
+                          "name": "Paseo 编辑关闭图标",
+                          "width": 20,
+                          "height": 20,
+                          "icon": "x",
+                          "library": "lucide",
+                          "weight": 500,
+                          "fill": "#F2F4F3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Eewaq",
+                      "name": "Paseo 编辑标题文字",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Z1dRBZ",
+                          "name": "Paseo 编辑标题",
+                          "fill": "#F2F4F3",
+                          "content": "编辑 Paseo 源",
+                          "fontFamily": "Inter",
+                          "fontSize": 27,
+                          "fontWeight": "650"
+                        },
+                        {
+                          "type": "text",
+                          "id": "eUzu1",
+                          "name": "Paseo 编辑副标题",
+                          "fill": "#8B908E",
+                          "content": "公司电脑",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "mxWkc",
+                  "name": "Paseo 编辑保存顶",
+                  "fill": "#4DB596",
+                  "content": "保存",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "650"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u1k6Dg",
+              "name": "编辑字段 名称",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xI4lX",
+                  "name": "名称标签",
+                  "fill": "#A0A6A3",
+                  "content": "名称",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "ptb7i",
+                  "name": "名称输入框",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#1C1E1E",
+                  "cornerRadius": 16,
+                  "stroke": "#303332",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "jYO92",
+                      "name": "名称图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "server",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    },
+                    {
+                      "type": "text",
+                      "id": "P3oSS",
+                      "name": "名称输入值",
+                      "fill": "#F2F4F3",
+                      "content": "公司电脑",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zx7xZ",
+                      "name": "名称尾部占位",
+                      "width": 1,
+                      "height": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "qWBDT",
+                  "name": "名称帮助",
+                  "fill": "#050606",
+                  "content": " ",
+                  "fontFamily": "Inter",
+                  "fontSize": 1,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "u3V6Li",
+              "name": "编辑字段 WebSocket URL",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mQAFl",
+                  "name": "WebSocket URL标签",
+                  "fill": "#A0A6A3",
+                  "content": "WebSocket URL",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "wAKH7",
+                  "name": "WebSocket URL输入框",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#1C1E1E",
+                  "cornerRadius": 16,
+                  "stroke": "#303332",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "DC07o",
+                      "name": "WebSocket URL图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "link",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RqNab",
+                      "name": "WebSocket URL输入值",
+                      "fill": "#F2F4F3",
+                      "content": "ws://10.0.0.8:6767/ws",
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Gh3dW",
+                      "name": "WebSocket URL尾部占位",
+                      "width": 1,
+                      "height": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "f54Nn7",
+                  "name": "WebSocket URL帮助",
+                  "fill": "#676D6A",
+                  "content": "仅支持 ws:// 或 wss://，默认路径 /ws",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Oe7nC",
+              "name": "编辑字段 访问密码",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 7,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Q6vDga",
+                  "name": "访问密码标签",
+                  "fill": "#A0A6A3",
+                  "content": "访问密码",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "Q7e66",
+                  "name": "访问密码输入框",
+                  "width": "fill_container",
+                  "height": 52,
+                  "fill": "#1C1E1E",
+                  "cornerRadius": 16,
+                  "stroke": "#303332",
+                  "strokeWidth": 1,
+                  "gap": 10,
+                  "padding": [
+                    0,
+                    13
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "kRn10",
+                      "name": "访问密码图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "key-round",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#8B908E"
+                    },
+                    {
+                      "type": "text",
+                      "id": "su2Ra",
+                      "name": "访问密码输入值",
+                      "fill": "#F2F4F3",
+                      "content": "••••••••••••",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "mkDnl",
+                      "name": "访问密码显示密码",
+                      "width": 17,
+                      "height": 17,
+                      "icon": "eye",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#6E7471"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "K3lop",
+                  "name": "访问密码帮助",
+                  "fill": "#676D6A",
+                  "content": "留空则保留当前密码",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hyEY0",
+              "name": "连接策略",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lDT2w",
+                  "name": "连接策略标题",
+                  "fill": "#A0A6A3",
+                  "content": "连接策略",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "XpuGC",
+                  "name": "自动重连设置",
+                  "width": "fill_container",
+                  "height": 58,
+                  "fill": "#1C1E1E",
+                  "cornerRadius": 17,
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "X4XMBW",
+                      "name": "自动重连文字组",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "t1XLp",
+                          "name": "自动重连标题",
+                          "fill": "#F2F4F3",
+                          "content": "断线自动重连",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "XI1f9",
+                          "name": "自动重连说明",
+                          "fill": "#8B908E",
+                          "content": "指数退避，最长 60 秒",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SeYLe",
+                      "name": "自动重连开关",
+                      "width": 44,
+                      "height": 26,
+                      "fill": "#4DB596",
+                      "cornerRadius": 13,
+                      "padding": 3,
+                      "justifyContent": "end",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "oxmGF",
+                          "name": "自动重连滑块",
+                          "fill": "#06251C",
+                          "width": 20,
+                          "height": 20
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NNBNA",
+                  "name": "可信网络设置",
+                  "width": "fill_container",
+                  "height": 58,
+                  "fill": "#1C1E1E",
+                  "cornerRadius": 17,
+                  "padding": [
+                    0,
+                    14
+                  ],
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QtVlU",
+                      "name": "可信网络文字组",
+                      "layout": "vertical",
+                      "gap": 3,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "epYYf",
+                          "name": "可信网络标题",
+                          "fill": "#F2F4F3",
+                          "content": "仅在可信网络连接",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "p5Eyo",
+                          "name": "可信网络说明",
+                          "fill": "#8B908E",
+                          "content": "避免无密码 daemon 暴露公网",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uiX4p",
+                      "name": "可信网络开关",
+                      "width": 44,
+                      "height": 26,
+                      "fill": "#4DB596",
+                      "cornerRadius": 13,
+                      "padding": 3,
+                      "justifyContent": "end",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "OPGqr",
+                          "name": "可信网络滑块",
+                          "fill": "#06251C",
+                          "width": 20,
+                          "height": 20
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pOIee",
+              "name": "Paseo 编辑底部操作",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GTz4j",
+                  "name": "保存并测试",
+                  "width": "fill_container",
+                  "height": 50,
+                  "fill": "#4DB596",
+                  "cornerRadius": 17,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "n6EeT",
+                      "name": "保存并测试图标",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "activity",
+                      "library": "lucide",
+                      "weight": 500,
+                      "fill": "#06251C"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PpVlF",
+                      "name": "保存并测试文字",
+                      "fill": "#06251C",
+                      "content": "保存并测试连接",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "650"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "nNnom",
+                  "name": "Paseo 密钥说明",
+                  "fill": "#6D7370",
+                  "content": "密码将使用 AndroidKeyStore 加密，不进入日志和备份",
+                  "fontFamily": "Inter",
+                  "fontSize": 9,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "s5H7zY",
+              "name": "删除此源按钮",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#241313",
+              "cornerRadius": 12,
+              "stroke": "#6B2B2B",
+              "strokeWidth": 1,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "DUwC2",
+                  "name": "删除此源文字",
+                  "fill": "#FF8A80",
+                  "content": "删除此源",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
                 }
               ]
             }

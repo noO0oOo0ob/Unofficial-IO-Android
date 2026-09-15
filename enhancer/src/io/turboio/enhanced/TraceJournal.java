@@ -38,4 +38,8 @@ final class TraceJournal {
         catch(AtomicMoveNotSupportedException e){Files.move(temp,file.toPath(),StandardCopyOption.REPLACE_EXISTING);}
     }
     synchronized String snapshot(){return String.join("\n",lines);}
+    synchronized void clear()throws IOException {
+        lines.clear();
+        Files.deleteIfExists(file.toPath());
+    }
 }

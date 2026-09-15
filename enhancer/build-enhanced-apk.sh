@@ -2,8 +2,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-APK="${1:-$ROOT/../rayneo-local-samples/RayNeo_AI_1.0.2.apk}"
-EXPECTED="32c67abbdf3c87eb113f965f984b79eee17b4bf3136f14f535375752ab1a7093"
+APK="${1:-$ROOT/../rayneo-local-samples/RayNeo_AI_1.0.4_195.apk}"
+EXPECTED="ef2e7dd346ca478e13d0f3f1bf31fa61412e44fb9b4ca9cf0d3e864ac608584b"
 BUILD="$ROOT/enhancer/build"
 DECODED="$BUILD/decoded"
 CLASSES="$BUILD/classes"
@@ -35,7 +35,7 @@ unzip -p "$APK" classes3.dex > "$DECODED/classes3.dex"
 
 # The previous diagnostic console/runtime and Codex bridge are intentionally not packaged.
 SOURCES=()
-for name in EnhancedActivity ApiKeyStore MinimaxResponsesClient PaseoConfigStore PaseoWebSocket PaseoClient VoiceCommandRouter MinimaxIntentRouter AssistantWire DemoWire SpeechBuffer MinimaxAsr VendorTransport DemoHooks DemoController NotificationWire AmapNavigationText AmapNavigationBridge AmapNavigationListenerService DemoTrace TraceJournal; do
+for name in EnhancedActivity DebugMessageSender ApiKeyStore MinimaxResponsesClient NotificationResultFormatter PaseoConfigStore PaseoWebSocket PaseoClient AgentPlatform AgentSessionClient PaseoAgentSessionClient ManagedAgentClient AgentPlatformAssembler AgentPlatformConfigStore VoiceCommandRouter MinimaxIntentRouter AssistantWire DemoWire SpeechBuffer MinimaxAsr VendorTransport DemoHooks DemoController NotificationWire AmapNavigationText AmapNavigationBridge AmapNavigationListenerService DemoTrace TraceJournal; do
   SOURCES+=("$ROOT/enhancer/src/io/turboio/enhanced/$name.java")
 done
 javac -source 8 -target 8 -encoding UTF-8 -classpath "$ANDROID_JAR" -d "$CLASSES" "${SOURCES[@]}"
@@ -49,8 +49,8 @@ python3 "$ROOT/enhancer/assemble-preserving.py" "$APK" "$BUILD/unsigned.apk" "$B
 "$TOOLS/apksigner" sign \
   --ks "$KEYSTORE" --ks-key-alias androiddebugkey \
   --ks-pass pass:android --key-pass pass:android \
-  --out "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk" "$BUILD/aligned.apk"
-"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"
-shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk"
+  --out "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk" "$BUILD/aligned.apk"
+"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk"
+shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk"
 
-python3 "$ROOT/enhancer/verify-apk.py" "$APK" "$OUTPUT/RayNeo_AI_1.0.2-turbo-debug.apk" "$TOOLS/aapt2" "$OUTPUT/verification.json"
+python3 "$ROOT/enhancer/verify-apk.py" "$APK" "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk" "$TOOLS/aapt2" "$OUTPUT/verification.json"

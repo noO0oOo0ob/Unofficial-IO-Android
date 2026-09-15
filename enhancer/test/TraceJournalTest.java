@@ -16,7 +16,8 @@ public final class TraceJournalTest {
    for(int i=0;i<100;i++)journal.append(unicode);
    if(!new TraceJournal(file.toFile()).snapshot().equals(journal.snapshot()))throw new AssertionError("unicode reopen");
    if(Files.size(file)>65536||Files.exists(dir.resolve("trace.log.tmp")))throw new AssertionError("size/atomic replacement");
-   System.out.println("PASS journal reopen, retention, sanitation, size and atomic replacement checks");
+   journal.clear();if(!journal.snapshot().isEmpty()||Files.exists(file))throw new AssertionError("clear");
+   System.out.println("PASS journal reopen, retention, sanitation, size, atomic replacement and clear checks");
   }finally{Files.deleteIfExists(file);Files.deleteIfExists(dir.resolve("trace.log.tmp"));Files.delete(dir);}
  }
 }

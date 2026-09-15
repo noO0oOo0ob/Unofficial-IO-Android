@@ -7,6 +7,14 @@ import java.io.ByteArrayOutputStream;
 
 public class DemoTest {
  static int checks;
+ static final class FakeManagedClient implements AgentSessionClient {
+  int sends,cancels,creates;String lastText="";
+  public AgentPlatform platform(){return AgentPlatform.MANAGED_AGENT;}public void connect(){}public String state(){return "已就绪";}public void close(){}
+  public List<Session> listSessions(int limit){return new ArrayList<>(Arrays.asList(new Session("ma-1","MA 会话","agent-template","idle","env-1","now")));}
+  public List<CreationTarget> listCreationTargets(int limit){return Arrays.asList(new CreationTarget("env-1","Managed Agent","agent-template","env-1","agent-template",""));}
+  public Session createSession(CreationTarget target){creates++;return new Session("ma-new","MA 新会话","agent-template","idle",target.environmentId,"now");}
+  public String lastAssistant(String id){return "MA 最后回复";}public void send(String id,String text){sends++;lastText=text;}public Finish waitForFinish(String id,long timeout){return new Finish("idle","MA 完成回答","");}public void cancel(String id){cancels++;}
+ }
  static void check(boolean ok,String message){checks++;if(!ok)throw new AssertionError(message);}
  static DemoController controller()throws Exception {Handler.reset();VendorTransport.reset();MinimaxAsr.reset();MinimaxIntentRouter.reset();MinimaxResponsesClient.reset();PaseoClient.reset();DemoHooks.active=null;android.util.Log.events.clear();Constructor<DemoController> x=DemoController.class.getDeclaredConstructor(android.content.Context.class);x.setAccessible(true);return x.newInstance(new android.content.Context());}
  static void shutdown(DemoController c)throws Exception {MinimaxAsr.release.countDown();Field f=DemoController.class.getDeclaredField("network");f.setAccessible(true);ExecutorService ex=(ExecutorService)f.get(c);ex.shutdown();check(ex.awaitTermination(2,TimeUnit.SECONDS),"network drain");DemoHooks.active=null;}
@@ -15,10 +23,13 @@ public class DemoTest {
  static void capture(DemoController c)throws Exception {check(DemoHooks.onAssistantMessage("glasses",DemoWire.control(1,1)),"wake consumed");for(int i=0;i<20;i++){check(DemoHooks.onAssistantMessage("glasses",audio(voiced())),"audio consumed");Handler.advance(0);}c.finishUtterance();check(MinimaxAsr.entered.await(2,TimeUnit.SECONDS),"ASR entered");}
  static void route(DemoController c,String text)throws Exception {Method m=DemoController.class.getDeclaredMethod("handleSpeech",String.class);m.setAccessible(true);m.invoke(c,text);}
  static void await(BooleanSupplier test)throws Exception {long end=System.currentTimeMillis()+2000;while(!test.get()&&System.currentTimeMillis()<end)Thread.sleep(5);check(test.get(),"async result");}
+ static void await(String message,BooleanSupplier test)throws Exception {long end=System.currentTimeMillis()+2000;while(!test.get()&&System.currentTimeMillis()<end)Thread.sleep(5);check(test.get(),message);}
  interface BooleanSupplier{boolean get();}
  public static void main(String[] args)throws Exception {
   DemoWire p=DemoWire.parse(DemoWire.control(2,1));check(p.type==2&&p.json.equals("{\"rc\":1}"),"control protocol");
   check(DemoWire.parse(AssistantWire.asrText("你好")).type==5,"ASR wire");DemoWire answer=DemoWire.parse(AssistantWire.answer("回答","问题","round"));org.json.JSONObject answerJson=new org.json.JSONObject(answer.json);check(answer.type==32&&"回答".equals(answerJson.getJSONObject("answer").getString("text"))&&answerJson.getJSONObject("answer").getBoolean("isFinal")&&"paseo".equals(answerJson.getString("sub")),"final answer wire");check(DemoWire.parse(AssistantWire.responseComplete()).type==12,"complete wire");
+  check(Arrays.equals(DebugMessageSender.parseHex("0x08 01\n10 05"),new byte[]{8,1,16,5}),"debug hex parser");
+  for(String invalid:new String[]{"","0","GG","001"}){try{DebugMessageSender.parseHex(invalid);throw new AssertionError("accepted invalid debug hex");}catch(IllegalArgumentException expected){checks++;}}
   NotificationWire.Packet amap=NotificationWire.notification("com.autonavi.minimap","高德地图",6010,"高德导航","前方100米右转","stable-1");org.json.JSONObject amapJson=new org.json.JSONObject(DemoWire.parse(amap.bytes).json);check("stable-1".equals(amap.uid)&&"com.autonavi.minimap".equals(amapJson.getString("appId"))&&amapJson.getInt("category")==6010,"AMap ordinary notification wire");
   for(byte[] bad:new byte[][]{new byte[0],{8},{0},{8,1,34,(byte)255},{8,2}}){try{DemoWire.parse(bad);throw new AssertionError("accepted malformed");}catch(IllegalArgumentException expected){checks++;}}
   SpeechBuffer b=new SpeechBuffer();for(int i=0;i<20;i++)check(!b.add(voiced()),"speech");for(int i=0;i<49;i++)check(!b.add(new byte[640]),"silence");check(b.add(new byte[640]),"endpoint");check(b.takeWav().length==44+70*640,"wav");
@@ -35,7 +46,11 @@ public class DemoTest {
   check(MinimaxIntentRouter.parseContent("```json\n{\"intent\":\"LIST\"}\n```","列出绘画",titles,Collections.emptyList()).kind==VoiceCommandRouter.Kind.LIST,"model route parse");
   check(MinimaxIntentRouter.parseContent("<think>x</think>{\"intent\":\"CHAT\"}","今天天气怎么样",titles,Collections.emptyList()).kind==VoiceCommandRouter.Kind.CHAT,"model chat route");
 
-  DemoController c=controller();check(!DemoHooks.onAssistantMessage("glasses",null),"off passthrough");c.enable();
+  DemoController c=controller();check(DebugMessageSender.sendAssistant(c,"调试消息").contains("已提交"),"debug Assistant send");check(VendorTransport.sent.size()==1&&VendorTransport.sent.get(0).business==13&&DemoWire.parse(VendorTransport.sent.get(0).bytes).type==5,"debug Assistant payload");shutdown(c);
+
+  c=controller();String work=c.paseoConfig.activeSourceId();c.paseoConfig.selectAgent("work-agent");String home=c.savePaseoSource(null,"家里电脑","ws://192.168.1.12:6767/ws","");check(home.equals(c.paseoConfig.activeSourceId())&&c.paseoSources().size()==2,"new Paseo source becomes active");check(c.paseoConfig.selectedAgent().isEmpty(),"agent selection is isolated per source");c.switchPaseoSource(work);check("work-agent".equals(c.paseoConfig.selectedAgent()),"switch restores source agent selection");c.testPaseoSource(home);c.deletePaseoSource(home);check(c.paseoSources().size()==1,"Paseo source can be deleted");shutdown(c);
+
+  c=controller();check(!DemoHooks.onAssistantMessage("glasses",null),"off passthrough");c.enable();
   check(!DemoHooks.onAssistantMessage("other",DemoWire.control(1,1)),"other device");
   check(DemoHooks.onAssistantMessage("glasses",DemoWire.control(1,1)),"wake");check(VendorTransport.sent.size()==1,"start only");
   c.disable();check(!c.enabled(),"disable ACKed");check(VendorTransport.sent.size()==3,"start stop exit, got "+VendorTransport.sent.size());shutdown(c);
@@ -57,6 +72,15 @@ public class DemoTest {
   c=controller();c.enable();route(c,"列出会话");await(()->PaseoClient.connects>0);route(c,"继续第一个");Thread.sleep(20);int routesBeforeQuery=MinimaxIntentRouter.calls;route(c,"介绍一下修改方案");await(()->PaseoClient.sends==1);check(MinimaxResponsesClient.calls==0,"first utterance after selecting session is forced to Codex");check(MinimaxIntentRouter.calls==routesBeforeQuery,"selected Codex query bypasses intent HTTP entirely");c.disable();shutdown(c);
 
   c=controller();c.enable();route(c,"新建会话");await(()->VendorTransport.sent.stream().anyMatch(x->x.business==21));route(c,"选择第一个工作区");await(()->PaseoClient.creates==1);check(PaseoClient.sends==0,"creation does not send a prompt yet");route(c,"检查这个工程");await(()->PaseoClient.sends==1);c.disable();shutdown(c);
+
+  c=controller();c.selectPlatform(AgentPlatform.MANAGED_AGENT);c.enable();FakeManagedClient automaticManaged=new FakeManagedClient();Field automaticClientField=DemoController.class.getDeclaredField("agentClient");automaticClientField.setAccessible(true);automaticClientField.set(c,automaticManaged);Field automaticOwns=DemoController.class.getDeclaredField("ownsDevice");automaticOwns.setAccessible(true);automaticOwns.setBoolean(c,true);route(c,"检查构建失败原因");await("managed task auto-creates session",()->automaticManaged.creates==1);await("managed task sends query after auto-create",()->automaticManaged.sends==1);await("assistant exits after background submission",()->VendorTransport.sent.stream().anyMatch(x->x.business==13&&DemoWire.parse(x.bytes).type==7));check(automaticManaged.lastText.contains("Managed Agent 管理端"),"managed prompt has no Paseo-specific detail location");c.disable();shutdown(c);
+
+  c=controller();final DemoController maController=c;c.selectPlatform(AgentPlatform.MANAGED_AGENT);check(c.platform()==AgentPlatform.MANAGED_AGENT,"controller switches Agent platform while disabled");c.enable();
+  FakeManagedClient managed=new FakeManagedClient();Field clientField=DemoController.class.getDeclaredField("agentClient");clientField.setAccessible(true);clientField.set(c,managed);
+  route(c,"列出会话");await("managed session list shown",()->VendorTransport.sent.stream().anyMatch(x->x.business==21));route(c,"继续第一个");Thread.sleep(20);
+  route(c,"检查 MA 任务");await("managed query sent",()->managed.sends==1);check(managed.lastText.contains("检查 MA 任务"),"managed query uses unified client");
+  route(c,"新建会话");await("managed session created",()->managed.creates==1);await("managed session persisted",()->"ma-new".equals(maController.platformConfig.selectedSession()));
+  route(c,"检查新会话");await("managed new-session query sent",()->managed.sends==2);route(c,"停止当前任务");Thread.sleep(20);route(c,"确认停止");await("managed interrupt sent",()->managed.cancels==1);c.disable();shutdown(c);
 
   c=controller();c.enable();MinimaxResponsesClient.block=true;capture(c);MinimaxAsr.release.countDown();check(MinimaxResponsesClient.entered.await(2,TimeUnit.SECONDS),"stream entered while duplex audio remains active");for(int i=0;i<16;i++){check(DemoHooks.onAssistantMessage("glasses",audio(voiced())),"barge audio consumed");Handler.advance(0);}await(()->MinimaxResponsesClient.cancelled);check(VendorTransport.sent.stream().anyMatch(x->x.business==13&&DemoWire.parse(x.bytes).type==4&&new org.json.JSONObject(DemoWire.parse(x.bytes).json).optInt("rc")==1),"speech onset sends VAD start and interrupts model");c.disable();shutdown(c);
 

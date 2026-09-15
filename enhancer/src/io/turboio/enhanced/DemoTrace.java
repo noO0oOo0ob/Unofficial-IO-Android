@@ -31,4 +31,8 @@ final class DemoTrace {
         if(text.isEmpty())text="暂无记录";
         return storageFailed?"日志保存失败，部分记录可能缺失\n"+text:text;
     }
+    static void clear()throws Exception {
+        TraceJournal target=journal;
+        if(target!=null)target.clear();
+    }
 }
