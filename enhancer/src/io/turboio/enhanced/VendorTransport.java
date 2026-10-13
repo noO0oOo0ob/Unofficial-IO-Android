@@ -47,7 +47,7 @@ final class VendorTransport {
     }
 
     void prepareOrdinaryWake()throws Exception {
-        // Both 1.0.2 N7.b$b.j and 1.0.4 K7.b$b.j clear the historical
+        // Both 1.0.2 N7.b$b.j and 1.0.4/1.0.5 K7.b$b.j clear the historical
         // system-interruption bit before a new ordinary wake.
         String reason=busyReason(false);
         if(!reason.isEmpty())throw new IllegalStateException(reason);
@@ -144,7 +144,7 @@ final class VendorTransport {
             try {
                 Class<?> core=Class.forName("E3.u",false,loader);
                 if(core.getDeclaredField("h").getType()==core&&Map.class.isAssignableFrom(core.getMethod("h").getReturnType()))
-                    return new Abi(true,"1.0.4/core-2.0.80","E3.u","E3.Q","P3.h","Y9.x","K7.b$b","ka.a","n");
+                    return new Abi(true,"1.0.4-1.0.5/E3.u","E3.u","E3.Q","P3.h","Y9.x","K7.b$b","ka.a","n");
             } catch(ReflectiveOperationException ignored) {}
             Class.forName("I3.v",false,loader);
             return new Abi(false,"1.0.2/core-2.0.76","I3.v","I3.P","S3.h","ca.x","N7.b$b","oa.a","m");

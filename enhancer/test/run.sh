@@ -63,5 +63,23 @@ echo "$ROOT/enhancer/src/io/turboio/enhanced/VendorTransport.java" >> "$OUT/adap
 echo "$ROOT/enhancer/test/AdapterTest.java" >> "$OUT/adapter-sources"
 javac -encoding UTF-8 -d "$OUT/adapter-classes" @"$OUT/adapter-sources"
 java -cp "$OUT/adapter-classes" io.turboio.enhanced.AdapterTest
+# 1.0.5 keeps the reflected ABI but moves the audio arbiter from D7.K to D7.L.
+# Exercise both layouts so the adapter cannot accidentally depend on D7.K.
+cp -R "$ROOT/enhancer/test/adapter-stubs" "$OUT/adapter-105"
+python3 - "$OUT/adapter-105" "$ROOT/enhancer/test/AdapterTest.java" "$OUT/AdapterTest.java" <<'PY'
+from pathlib import Path
+import sys
+root = Path(sys.argv[1])
+p = root / 'D7/K.java'
+p.rename(root / 'D7/L.java')
+for p in root.rglob('*.java'):
+    p.write_text(p.read_text().replace('D7.K', 'D7.L').replace('class K ', 'class L '))
+Path(sys.argv[3]).write_text(Path(sys.argv[2]).read_text().replace('D7.K', 'D7.L'))
+PY
+find "$OUT/adapter-105" -name '*.java' > "$OUT/adapter-105-sources"
+echo "$ROOT/enhancer/src/io/turboio/enhanced/VendorTransport.java" >> "$OUT/adapter-105-sources"
+echo "$OUT/AdapterTest.java" >> "$OUT/adapter-105-sources"
+javac -encoding UTF-8 -d "$OUT/adapter-105-classes" @"$OUT/adapter-105-sources"
+java -cp "$OUT/adapter-105-classes" io.turboio.enhanced.AdapterTest
 javac -encoding UTF-8 -d "$OUT/journal-classes" "$ROOT/enhancer/src/io/turboio/enhanced/TraceJournal.java" "$ROOT/enhancer/test/TraceJournalTest.java"
 java -cp "$OUT/journal-classes" io.turboio.enhanced.TraceJournalTest

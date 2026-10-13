@@ -1,0 +1,247 @@
+{
+  "checkedOn": "2026-09-21",
+  "sourcePage": "https://rayneo.cn/commonPage/venus/appDownload/index_m.html",
+  "appProductionEndpoint": "https://xr-api-p.rayneo.cn/xrlauncherapi/v1/signApi/gray/upgrade",
+  "websiteEndpoint": "https://xrlauncher-o.api.leiniao.com/xrlauncherapi/v1/signApi/gray/upgrade",
+  "requestParams": {
+    "packageName": "com.rayneo.venus.pub",
+    "versionCode": "00.00.00.0001",
+    "packageType": "app",
+    "deviceType": "android",
+    "appVersion": "00.00.00.0001"
+  },
+  "response": {
+    "error_code": 1000,
+    "error_msg": "OK",
+    "data": {
+      "taskId": 240,
+      "taskName": "Android OTA2.5 1.0.5.201",
+      "appName": "雷鸟 AI 眼镜",
+      "packageName": "com.rayneo.venus.pub",
+      "versionName": "1.0.5",
+      "versionCode": 100050201,
+      "upgradeType": 2,
+      "userScope": 1,
+      "updateDesc": "【本次更新】\n1.全天智记体验优化,记录与总结更顺畅。\n2.实时字幕翻译更快更准。\n3.优化OTA升级与配对连接体验。\n4.修复常见问题。",
+      "appIcon": "https://file-tdp-ffalcon-o.api.leiniao.com/res/2fbca90e/5p.png",
+      "apkSize": 406035635,
+      "downloadUrl": "https://file-tdp-ffalcon-o.api.leiniao.com/res/b8c2fba9/thirdapk_fb44c02b50dceb632b7b7440496c7669.apk",
+      "apkMd5": "fb44c02b50dceb632b7b7440496c7669",
+      "appDesc": "<p><br></p>",
+      "appImages": null,
+      "dependList": [],
+      "phoneFactoryUrl": null
+    }
+  },
+  "apk": {
+    "versionName": "1.0.5",
+    "versionCode": 201,
+    "sizeBytes": 406035635,
+    "sha256": "770ba0793d31609aa1e4477db2f8a7aec2c8acc4d9c6ab43d57b0dfc720d3ab3",
+    "certificateSha256": "a5bd909475e5c7441e0ef48ff7ee69efbc594808a60b470a4feb6d30b0340883",
+    "dexSha256": {
+      "classes.dex": "17cba4e75f7ab7977ef7c443a12ba7699022634e1cbfc567e42127584eb5de2c",
+      "classes2.dex": "5f216220454744cc8719ae6cdb3d537bf496542502e0c5918ea5074ada793187",
+      "classes3.dex": "1c1b0025a24bce6ff171af398827e0d811dc5d46980e363a08aa56776ce5901e"
+    },
+    "zipIntegrity": "PASS"
+  },
+  "abiChecks": {
+    "ka/a": {
+      "signatures": [
+        ".method public abstract invoke()Ljava/lang/Object;"
+      ],
+      "smaliSha256": "5f77db10731a228ccde5850f4354aaf2c00b0fc00b05e27c697674e6ebe95cd7"
+    },
+    "Y9/x": {
+      "signatures": [
+        ".field public static final a:LY9/x;"
+      ],
+      "smaliSha256": "1c81b82e6e5e99adc6268e054fabd38e16e76c12a364be01ac38623e6dca86a8"
+    },
+    "P3/h$a": {
+      "signatures": [
+        ".method public static a(B)LP3/h;"
+      ],
+      "smaliSha256": "9fec7624a4ad5ba2b93a17c6c85c0c8905dc1ab9676d78c8d07b8e7d8f00f844"
+    },
+    "P3/h": {
+      "signatures": [
+        ".field public final b:B"
+      ],
+      "smaliSha256": "6ca6534428e8a91cfd780b6dc4c4e8e7d94e8c909c0fe7e4b69db6787e506a08"
+    },
+    "D7/L": {
+      "signatures": [
+        ".field public a:Z",
+        ".field public b:Z",
+        ".field public c:Z",
+        ".field public d:Z",
+        ".method public final d(Z)V"
+      ],
+      "smaliSha256": "dbe71652d44e1c95fbefa336b29d388c273e277275164724a01bd9f4c2458427"
+    },
+    "E3/Q": {
+      "signatures": [
+        ".method public constructor <init>([BLjava/lang/String;LP3/h;Ljava/lang/String;Ljava/lang/String;)V"
+      ],
+      "smaliSha256": "4f3bfdff35bf7c941b02321e2db239bb7eeaccf2e51ddc31f864711e8b2f48e7"
+    },
+    "E3/u": {
+      "signatures": [
+        ".field public static volatile h:LE3/u;",
+        ".field public static i:Landroid/content/Context;",
+        ".method public static h()Ljava/util/Map;",
+        ".method public final u(LE3/Q;Lkotlin/jvm/functions/Function2;)V"
+      ],
+      "smaliSha256": "e79c0e2215f3823965a805e24c1a1c926881e6d8f8337fffab8f5da13f88559e"
+    },
+    "K7/b$b": {
+      "signatures": [
+        ".field public final synthetic a:LK7/b;"
+      ],
+      "smaliSha256": "af2c62b39ca2a26024a4a5439087c38f430520475fc35966d9a80629dbeb7381"
+    },
+    "K7/b": {
+      "signatures": [
+        ".field public final c:LK7/d;",
+        ".field public final d:LD7/L;",
+        ".field public final e:Lka/a;",
+        ".field public final f:Lka/a;",
+        ".field public final g:Lka/a;"
+      ],
+      "smaliSha256": "5a9721ca34adca16ff2740c5eeafdaa9f80725893665d240970753c8dc5ea1c7"
+    },
+    "K7/d": {
+      "signatures": [
+        ".field public volatile n:Lcom/rayneo/rayneo_venus_sdk_plugin/m;"
+      ],
+      "smaliSha256": "bc126d127acf838f52fc90033a8b4d55d8cd53d60d781220305a5dade67338b9"
+    },
+    "com/rayneo/rayneo_venus_sdk_plugin/e": {
+      "signatures": [
+        ".method public final c(Ljava/lang/String;[B)V",
+        ".field public static final c:Ljava/util/concurrent/CopyOnWriteArrayList;"
+      ],
+      "smaliSha256": "6daecea9890a4535c0e31b8fa988020c126e621cc05bd0e51eb7db2a446ed6b0"
+    },
+    "com/rayneo/airuntime/utils/OpusDecoder": {
+      "signatures": [
+        ".method public final decode2Bytes([B)[B",
+        ".method public final init-uN6NtqM(II)Z",
+        ".method public final release()V"
+      ],
+      "smaliSha256": "e9b7fa5e909d641df5ddfec30207ba59bceace45594a9fc289fe1e2acf954e51"
+    }
+  },
+  "nativeLibraryCount": 66,
+  "changedNativeLibrariesSince104": [
+    "lib/arm64-v8a/libapp.so",
+    "lib/arm64-v8a/libbusiness.so",
+    "lib/arm64-v8a/libbusiness_jni.so",
+    "lib/arm64-v8a/libcommon.so",
+    "lib/arm64-v8a/libcomponents.so",
+    "lib/arm64-v8a/libdartjni.so",
+    "lib/arm64-v8a/libfapm.so",
+    "lib/arm64-v8a/libflutter_bicubic_resize.so",
+    "lib/arm64-v8a/libkws.so",
+    "lib/arm64-v8a/librayneo_fuzzy_sdk.so"
+  ],
+  "hardwareVerified": false,
+  "enhancedApk": {
+    "originalSha256": "770ba0793d31609aa1e4477db2f8a7aec2c8acc4d9c6ab43d57b0dfc720d3ab3",
+    "enhancedSha256": "975fef105c24188d106eb7fdbefb9ad85139f87b9e0d27c64a30025edf5c925c",
+    "changedOriginalEntries": [
+      "AndroidManifest.xml",
+      "classes2.dex"
+    ],
+    "addedEntries": [
+      "classes4.dex"
+    ],
+    "identicalVendorFiles": 3939,
+    "identicalResourcesAssetsNativeFiles": 3629,
+    "manifestOnlyAddsDemoActivityAndAmapListener": true,
+    "hardwareVerified": false,
+    "certificateSha256": "50c30ceed3b6fa090379750c02a1d2dd2d26d5fef49803bfe9ea92063c4b5cab",
+    "sameCertificateAsPreviousTurbo104": true,
+    "builtOn": "2026-10-13"
+  },
+  "hookProof": {
+    "class": "com.rayneo.rayneo_venus_sdk_plugin.e",
+    "method": "c(String, byte[])",
+    "originalSha256": "6daecea9890a4535c0e31b8fa988020c126e621cc05bd0e51eb7db2a446ed6b0",
+    "originalMethodBodyPreserved": true
+  },
+  "latestCheck": {
+    "checkedOn": "2026-10-13",
+    "sourcePage": "https://rayneo.cn/commonPage/venus/appDownload/index_m.html",
+    "requestParams": {
+      "packageName": "com.rayneo.venus.pub",
+      "versionCode": "00.00.00.0001",
+      "packageType": "app",
+      "deviceType": "android",
+      "appVersion": "00.00.00.0001"
+    },
+    "appProductionResponse": {
+      "error_code": 1000,
+      "error_msg": "OK",
+      "data": {
+        "taskId": 240,
+        "taskName": "Android OTA2.5 1.0.5.201",
+        "appName": "雷鸟 AI 眼镜",
+        "packageName": "com.rayneo.venus.pub",
+        "versionName": "1.0.5",
+        "versionCode": 100050201,
+        "upgradeType": 2,
+        "userScope": 1,
+        "updateDesc": "【本次更新】\n1.全天智记体验优化,记录与总结更顺畅。\n2.实时字幕翻译更快更准。\n3.优化OTA升级与配对连接体验。\n4.修复常见问题。",
+        "appIcon": "https://file-tdp-ffalcon-o.api.leiniao.com/res/2fbca90e/5p.png",
+        "apkSize": 406035635,
+        "downloadUrl": "https://file-tdp-ffalcon-o.api.leiniao.com/res/b8c2fba9/thirdapk_fb44c02b50dceb632b7b7440496c7669.apk",
+        "apkMd5": "fb44c02b50dceb632b7b7440496c7669",
+        "appDesc": "<p><br></p>",
+        "appImages": null,
+        "dependList": [],
+        "phoneFactoryUrl": null
+      }
+    },
+    "websiteResponse": {
+      "error_code": 1000,
+      "error_msg": "OK",
+      "data": {
+        "taskId": 240,
+        "taskName": "Android OTA2.5 1.0.5.201",
+        "appName": "雷鸟 AI 眼镜",
+        "packageName": "com.rayneo.venus.pub",
+        "versionName": "1.0.5",
+        "versionCode": 100050201,
+        "upgradeType": 2,
+        "userScope": 1,
+        "updateDesc": "【本次更新】\n1.全天智记体验优化,记录与总结更顺畅。\n2.实时字幕翻译更快更准。\n3.优化OTA升级与配对连接体验。\n4.修复常见问题。",
+        "appIcon": "https://file-tdp-ffalcon-o.api.leiniao.com/res/2fbca90e/5p.png",
+        "apkSize": 406035635,
+        "downloadUrl": "https://file-tdp-ffalcon-o.api.leiniao.com/res/b8c2fba9/thirdapk_fb44c02b50dceb632b7b7440496c7669.apk",
+        "apkMd5": "fb44c02b50dceb632b7b7440496c7669",
+        "appDesc": "<p><br></p>",
+        "appImages": null,
+        "dependList": [],
+        "phoneFactoryUrl": null
+      }
+    },
+    "responsesIdentical": true,
+    "publicChannelsOnly": true,
+    "appRuntimeRequestCaptured": false,
+    "localOriginalApkReverified": true,
+    "smaliClassesReverified": 12,
+    "hostRegressionPassed": true,
+    "connectedAdbDevices": [],
+    "hardwareVerified": false,
+    "freshBuildSmaliReverified": true,
+    "enhancedApkRebuilt": true,
+    "signatureV3Verified": true,
+    "zipalign16KiBVerified": true,
+    "sameCertificateAsPreviousTurbo104": true,
+    "jadxSingleClass": "K7.b",
+    "jadxMethodErrors": 2
+  }
+}

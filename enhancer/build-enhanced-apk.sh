@@ -2,8 +2,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-APK="${1:-$ROOT/../rayneo-local-samples/RayNeo_AI_1.0.4_195.apk}"
-EXPECTED="ef2e7dd346ca478e13d0f3f1bf31fa61412e44fb9b4ca9cf0d3e864ac608584b"
+APK="${1:-$ROOT/../rayneo-local-samples/RayNeo_AI_1.0.5_201.apk}"
+EXPECTED="770ba0793d31609aa1e4477db2f8a7aec2c8acc4d9c6ab43d57b0dfc720d3ab3"
 BUILD="$ROOT/enhancer/build"
 DECODED="$BUILD/decoded"
 CLASSES="$BUILD/classes"
@@ -49,8 +49,8 @@ python3 "$ROOT/enhancer/assemble-preserving.py" "$APK" "$BUILD/unsigned.apk" "$B
 "$TOOLS/apksigner" sign \
   --ks "$KEYSTORE" --ks-key-alias androiddebugkey \
   --ks-pass pass:android --key-pass pass:android \
-  --out "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk" "$BUILD/aligned.apk"
-"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk"
-shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk"
+  --out "$OUTPUT/RayNeo_AI_1.0.5_201-turbo-debug.apk" "$BUILD/aligned.apk"
+"$TOOLS/apksigner" verify --verbose "$OUTPUT/RayNeo_AI_1.0.5_201-turbo-debug.apk"
+shasum -a 256 "$OUTPUT/RayNeo_AI_1.0.5_201-turbo-debug.apk"
 
-python3 "$ROOT/enhancer/verify-apk.py" "$APK" "$OUTPUT/RayNeo_AI_1.0.4_195-turbo-debug.apk" "$TOOLS/aapt2" "$OUTPUT/verification.json"
+python3 "$ROOT/enhancer/verify-apk.py" "$APK" "$OUTPUT/RayNeo_AI_1.0.5_201-turbo-debug.apk" "$TOOLS/aapt2" "$OUTPUT/verification.json"

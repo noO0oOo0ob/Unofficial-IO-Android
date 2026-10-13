@@ -25,7 +25,7 @@ public final class AdapterTest {
   state.d.b=true;blocked("翻译",true);check(state.d.a,"translation must not clear interrupt");state.d.b=false;state.d.a=false;
   state.c.n=new Object();blocked("共享音频",true);state.c.n=null;
   E3.u.h=null;blocked("连接眼镜",false);E3.u.h=new E3.u();
-  String snapshot=VendorTransport.diagnostics();check(snapshot.contains("abi=1.0.4/core-2.0.80")&&snapshot.contains("systemInterrupted=")&&snapshot.contains("alwaysOnActive=")&&snapshot.contains("audioMode="),"diagnostic has latest ABI and actual guard flags");
+  String snapshot=VendorTransport.diagnostics();check(snapshot.contains("abi=1.0.4-1.0.5/E3.u")&&snapshot.contains("systemInterrupted=")&&snapshot.contains("alwaysOnActive=")&&snapshot.contains("audioMode="),"diagnostic has latest ABI and actual guard flags");
   System.out.println("PASS "+checks+" real adapter regression checks");
  }
 }

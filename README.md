@@ -16,10 +16,12 @@
 
 当前运行时严格锁定到以下样本：
 
-- RayNeo AI APK：`1.0.4 (195)`
+- RayNeo AI APK：`1.0.5 (201)`
 - 包名：`com.rayneo.venus.pub`
-- CoreConnect：`2.0.80-SNAPSHOT`
-- 样本 SHA-256：`ef2e7dd346ca478e13d0f3f1bf31fa61412e44fb9b4ca9cf0d3e864ac608584b`
+- Turbo 互操作 ABI：`E3.u / E3.Q / K7.b`（1.0.4–1.0.5 共用；不据此推断 SDK 版本）
+- 样本 SHA-256：`770ba0793d31609aa1e4477db2f8a7aec2c8acc4d9c6ab43d57b0dfc720d3ab3`
+
+2026-10-13 重新查询官方 App 生产更新接口和官网公开下载接口，两者仍返回 `1.0.5 (201)`。这是公开渠道的查询结果，不代表所有账号、设备或灰度渠道。
 
 ## 当前实现范围
 
@@ -49,7 +51,7 @@
 - Android SDK Build-Tools 36.0.0（需要 `d8`、`zipalign` 和 `apksigner`）
 - Android Platform Tools（需要 `adb`）
 - Apktool 3.0.3
-- 本人合法取得的 RayNeo AI `1.0.4 (195)` 原始 APK
+- 本人合法取得的 RayNeo AI `1.0.5 (201)` 原始 APK
 - Android 10（API 29）或更高版本的测试手机
 
 先检查基础命令：
@@ -115,10 +117,10 @@ keytool -genkeypair -v \
 
 ### 1. 准备底座 APK
 
-把本人合法取得的 `RayNeo_AI_1.0.4_195.apk` 放在本机目录中。仓库不会提供、下载或分发该文件。脚本只接受 SHA-256 为 `ef2e7dd346ca478e13d0f3f1bf31fa61412e44fb9b4ca9cf0d3e864ac608584b` 的固定样本，可先自行核对：
+把本人合法取得的 `RayNeo_AI_1.0.5_201.apk` 放在本机目录中。仓库不会提供、下载或分发该文件。脚本只接受 SHA-256 为 `770ba0793d31609aa1e4477db2f8a7aec2c8acc4d9c6ab43d57b0dfc720d3ab3` 的固定样本，可先自行核对：
 
 ```bash
-shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.4_195.apk
+shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.5_201.apk
 ```
 
 ### 2. 构建、对齐和签名
@@ -126,7 +128,7 @@ shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.4_195.apk
 在仓库根目录执行：
 
 ```bash
-./enhancer/build-enhanced-apk.sh /Users/USER/Downloads/RayNeo_AI_1.0.4_195.apk
+./enhancer/build-enhanced-apk.sh /Users/USER/Downloads/RayNeo_AI_1.0.5_201.apk
 ```
 
 脚本依次完成：
@@ -139,7 +141,7 @@ shasum -a 256 /Users/USER/Downloads/RayNeo_AI_1.0.4_195.apk
 构建产物位于：
 
 ```text
-enhancer/build/output/RayNeo_AI_1.0.4_195-turbo-debug.apk
+enhancer/build/output/RayNeo_AI_1.0.5_201-turbo-debug.apk
 ```
 
 每次构建都会清理 `enhancer/build/`。不要把 APK、签名密钥或从官方 APK 提取出的内容提交到仓库。
@@ -158,15 +160,17 @@ adb devices
 
 ```bash
 adb install --no-incremental -r \
-  enhancer/build/output/RayNeo_AI_1.0.4_195-turbo-debug.apk
+  enhancer/build/output/RayNeo_AI_1.0.5_201-turbo-debug.apk
 ```
+
+同签名覆盖安装保留应用数据，预计无需重新登录、配置 Turbo 或绑定眼镜；更新后先打开官方入口确认重连，再手动开启 Turbo 接管。不要先卸载旧增强版。App 内官方更新下载的是官方签名 APK，无法直接覆盖本地签名的 Turbo 包。
 
 如果手机上是官方签名版本，必须先自行备份必要数据，再卸载官方 App。下面的卸载命令会清除该 App 的本地数据：
 
 ```bash
 adb uninstall com.rayneo.venus.pub
 adb install --no-incremental \
-  enhancer/build/output/RayNeo_AI_1.0.4_195-turbo-debug.apk
+  enhancer/build/output/RayNeo_AI_1.0.5_201-turbo-debug.apk
 ```
 
 安装完成后，桌面会同时出现官方 `RayNeo AI` 入口和新增的 `Turbo IO` 入口。
@@ -228,4 +232,4 @@ adb reverse --remove tcp:6767
 
 本仓库原创内容采用 [MIT License](LICENSE)。项目的非商业研究定位、支持范围、风险和责任限制见 [DISCLAIMER.md](DISCLAIMER.md)；第三方材料的权属与许可边界见 [VENDOR_NOTICES.md](VENDOR_NOTICES.md)。
 
-本次 `1.0.4` 的导出、ABI 差分和适配证据见 [docs/INVESTIGATION_1.0.4.md](docs/INVESTIGATION_1.0.4.md)。早期 `1.0.2` 适配中遇到的状态误判、设备发现、签名身份和部署路线问题，连同证据与取舍，保留在 [docs/INVESTIGATION_1.0.2.md](docs/INVESTIGATION_1.0.2.md)。
+本次 `1.0.5` 的官方更新接口、ABI 差分与配对保留评估见 [docs/INVESTIGATION_1.0.5.md](docs/INVESTIGATION_1.0.5.md)。之前 `1.0.4` 的导出、ABI 差分和适配证据见 [docs/INVESTIGATION_1.0.4.md](docs/INVESTIGATION_1.0.4.md)。早期 `1.0.2` 适配中遇到的状态误判、设备发现、签名身份和部署路线问题，连同证据与取舍，保留在 [docs/INVESTIGATION_1.0.2.md](docs/INVESTIGATION_1.0.2.md)。
